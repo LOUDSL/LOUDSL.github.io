@@ -40,8 +40,7 @@
      ══════════════════════════ -->
 <nav>
   <a href="/" class="nav-logo">
-    <!-- Replace with: <img src="assets/images/logo-black.png" alt="LOUD" style="height:32px"> when logo file is ready -->
-    <span class="nav-logo-wordmark">LOUD</span>
+    <img src="assets/images/logo-black.png" alt="LOUD" style="height:32px">
   </a>
 
   <ul class="nav-links">
@@ -86,11 +85,15 @@
 <!-- ══════════════════════════
      HERO
      ══════════════════════════ -->
-<section class="hero texture">
-  <div class="hero-left">
-    <img src="https://images.booqablecdn.com/assets/141679d7-c698-4219-a502-0cdb1e76f7dc/clzihqxll01283579e8mlqzujmobilebackgroundwebsite-c00d1f0a8931332fc7ea87f0bf7b873b7227398251f66f5670814d9189f9bbb9(2).jpg"
-      alt="Party Licht Show Wien" loading="eager">
-  </div>
+<section class="hero hero--video">
+
+  <!-- Looping slow-mo background video (3s–11s @ 0.4× speed) -->
+  <video id="hero-video" class="hero-video" autoplay muted playsinline preload="auto">
+    <source src="assets/videos/Hero-Raw.mp4" type="video/mp4">
+  </video>
+  <div class="hero-video-overlay"></div>
+  <div class="hero-video-tint"></div>
+  <div class="hero-video-grain"></div>
 
   <div class="hero-center">
     <div class="hero-location-pill">
@@ -108,10 +111,6 @@
     </div>
   </div>
 
-  <div class="hero-right">
-    <img src="https://images.booqablecdn.com/assets/141679d7-c698-4219-a502-0cdb1e76f7dc/clzihqxll01283579e8mlqzujmobilebackgroundwebsite-c00d1f0a8931332fc7ea87f0bf7b873b7227398251f66f5670814d9189f9bbb9(2).jpg"
-      alt="Sound Equipment" loading="eager">
-  </div>
 </section>
 
 
@@ -172,7 +171,9 @@
     <span class="client-dot">·</span>
     <span class="client-name">Raiffeisen</span>
     <span class="client-dot">·</span>
-    <span class="client-name">Volvo</span>
+    <img src="assets/images/logos/volvo.png" alt="Volvo"
+      style="height:22px; width:auto; opacity:0.35; filter:grayscale(100%); vertical-align:middle; transition:opacity 0.2s;"
+      onmouseover="this.style.opacity='0.6'" onmouseout="this.style.opacity='0.35'">
     <span class="client-dot">·</span>
     <span class="client-name">My Place Storage</span>
   </div>
@@ -228,7 +229,7 @@
   <div class="packages-grid">
 
     <!-- LOUD -->
-    <a href="https://partyloud.at/products/loud-houseparty-paket" class="package-card" target="_blank" rel="noopener">
+    <div class="package-card">
       <div class="featured-badge" style="background:var(--green); color:var(--black);">🎉 Launch Promo</div>
       <div class="package-img">
         <div class="quarter-circle"><div class="quarter-circle-inner"></div></div>
@@ -250,13 +251,15 @@
             €69
             <span>statt <s>€88</s> · Du sparst €19</span>
           </div>
-          <span class="btn-book">Buchen →</span>
+          <div class="booqable-product" id="bq-loud" data-id="loud-partybox-paket"
+            style="position:fixed; top:-9999px; left:-9999px; width:120px; height:44px;"></div>
+          <button class="btn-book" onclick="var b=document.querySelector('#bq-loud button,#bq-loud a');if(b)b.dispatchEvent(new MouseEvent('click',{bubbles:true,cancelable:true,view:window}));">Buchen →</button>
         </div>
       </div>
-    </a>
+    </div>
 
     <!-- LOUDER -->
-    <a href="https://partyloud.at/products/louder-partypaket" class="package-card featured" target="_blank" rel="noopener">
+    <div class="package-card featured">
       <div class="featured-badge">Meistgebucht</div>
       <div class="package-img">
         <div class="quarter-circle"><div class="quarter-circle-inner"></div></div>
@@ -278,10 +281,12 @@
             €89
             <span>statt <s>€116</s> · Du sparst €27</span>
           </div>
-          <span class="btn-book">Buchen →</span>
+          <div class="booqable-product" id="bq-louder" data-id="louder-soundboks-paket"
+            style="position:fixed; top:-9999px; left:-9999px; width:120px; height:44px;"></div>
+          <button class="btn-book" onclick="var b=document.querySelector('#bq-louder button,#bq-louder a');if(b)b.dispatchEvent(new MouseEvent('click',{bubbles:true,cancelable:true,view:window}));">Buchen →</button>
         </div>
       </div>
-    </a>
+    </div>
 
     <!-- ADD-ONS -->
     <a href="https://partyloud.at/collections/eventpakete" class="package-card" target="_blank" rel="noopener">
@@ -323,9 +328,9 @@
 <section class="booking-section texture" id="booking">
   <div class="booking-inner">
     <div class="booking-header">
-      <div class="section-label">Direkt online buchen</div>
-      <h2 class="section-title">Alle Geräte.<br>Verfügbarkeit prüfen.</h2>
-      <p class="section-sub">Wähle dein Equipment, prüfe die Verfügbarkeit und buche direkt — ohne Umwege.</p>
+      <div class="section-label" data-i18n="booking.label">Direkt online buchen</div>
+      <h2 class="section-title" data-i18n="booking.title">Alle Geräte. Verfügbarkeit prüfen.</h2>
+      <p class="section-sub" data-i18n="booking.sub">Wähle dein Equipment, prüfe die Verfügbarkeit und buche direkt — ohne Umwege.</p>
     </div>
 
     <!--
@@ -338,152 +343,94 @@
       <script src="https://shop.booqable.com/embed.js"></script>
     -->
     <div class="booqable-container">
-      <div class="booqable-placeholder">
-        <span class="bp-icon">🛒</span>
-        <h3>Booqable Shop einbetten</h3>
-        <p>Ersetze diesen Bereich mit deinem Booqable Embed-Code.<br>Booqable Dashboard → Settings → Online Store → Share/Embed</p>
-        <div class="booqable-code">
-          &lt;div data-booqable="shop"<br>
-          &nbsp;&nbsp;data-company-slug="partyloud"&gt;&lt;/div&gt;<br>
-          &lt;script src="https://shop.booqable.com/embed.js"&gt;&lt;/script&gt;
-        </div>
-      </div>
+      <div class="booqable-datepicker"></div>
+      <div class="booqable-product-list"></div>
     </div>
   </div>
 </section>
 
 
 <!-- ══════════════════════════
-     PARTYKART TEASER BANNER
+     PARTYKART
      ══════════════════════════ -->
-<div style="background:var(--black); overflow:hidden; position:relative; cursor:pointer;"
-  onclick="document.getElementById('partykart-section').scrollIntoView({behavior:'smooth'})">
-  <div style="display:grid; grid-template-columns:1fr 1fr; min-height:180px;">
-    <div style="padding:48px 56px; display:flex; flex-direction:column; justify-content:center; position:relative; z-index:2;">
-      <div style="display:inline-flex; align-items:center; gap:8px; background:var(--green); color:var(--black); font-size:11px; font-weight:700; letter-spacing:0.1em; text-transform:uppercase; padding:4px 12px; border-radius:3px; margin-bottom:16px; width:fit-content;">
+<section id="partykart-section" style="background:var(--black); overflow:hidden;">
+
+  <!-- Hero row -->
+  <div style="display:grid; grid-template-columns:1fr 1fr; min-height:320px;" class="pk-hero-row">
+    <div style="padding:56px 56px 40px; display:flex; flex-direction:column; justify-content:center; position:relative; z-index:2;" class="pk-hero-text">
+      <div data-i18n="pk.badge" style="display:inline-flex; align-items:center; gap:8px; background:var(--green); color:var(--black); font-size:11px; font-weight:700; letter-spacing:0.1em; text-transform:uppercase; padding:4px 12px; border-radius:3px; margin-bottom:16px; width:fit-content;">
         ⚡ Neu — Exklusiv bei LOUD
       </div>
-      <div style="font-family:'Barlow Condensed',sans-serif; font-weight:900; font-size:clamp(42px,5vw,72px); color:white; text-transform:uppercase; letter-spacing:-1px; line-height:0.9; margin-bottom:12px;">PARTYKART</div>
-      <div style="font-size:15px; color:rgba(255,255,255,0.55); margin-bottom:24px; max-width:360px; line-height:1.5;">Das komplette Outdoor-Setup. 100% batteriebetrieben. Donauinsel, Prater, Rooftop — überall.</div>
+      <div style="font-family:'Barlow Condensed',sans-serif; font-weight:900; font-size:clamp(52px,6vw,88px); color:white; text-transform:uppercase; letter-spacing:-2px; line-height:0.88; margin-bottom:16px;">TAKE THE<br>PARTY<br>ANYWHERE</div>
+      <div data-i18n="pk.desc" style="font-size:15px; color:rgba(255,255,255,0.5); margin-bottom:28px; max-width:400px; line-height:1.6;">Donauinsel, Prater, Rooftop — 100% batteriebetrieben, kein Strom nötig, überall einsetzbar.</div>
       <div style="display:flex; align-items:center; gap:16px; flex-wrap:wrap;">
-        <div style="font-family:'Barlow Condensed',sans-serif; font-weight:900; font-size:36px; color:var(--green);">€189 <span style="font-size:16px; color:rgba(255,255,255,0.35); font-family:'Barlow',sans-serif; font-weight:400;">/ Tag</span></div>
-        <div style="background:rgba(255,255,255,0.08); color:rgba(255,255,255,0.6); font-size:12px; padding:6px 14px; border-radius:4px; border:1px solid rgba(255,255,255,0.1);">Mehr erfahren ↓</div>
-      </div>
-    </div>
-    <div style="position:relative; overflow:hidden; min-height:200px; background:#1A1A1A;">
-      <!-- Replace src with assets/images/partykart.jpg when outdoor photo is ready -->
-      <img src="assets/images/partykart.jpg" alt="PARTYKART — Mobiles Party Setup"
-        style="width:100%; height:100%; object-fit:cover; object-position:center 30%; filter:brightness(0.7);"
-        onerror="this.style.display='none'">
-      <div style="position:absolute; inset:0; background:linear-gradient(to right,var(--black) 0%,transparent 40%);"></div>
-    </div>
-  </div>
-</div>
-
-
-<!-- ══════════════════════════
-     PARTYKART FULL SECTION
-     ══════════════════════════ -->
-<section id="partykart-section" style="background:#0F0F0F; padding:80px 48px; overflow:hidden;">
-  <div style="max-width:1100px; margin:0 auto;">
-
-    <div style="display:grid; grid-template-columns:1fr 1fr; gap:80px; align-items:center; margin-bottom:64px;">
-      <div>
-        <div style="font-family:'Barlow Condensed',sans-serif; font-size:13px; font-weight:700; letter-spacing:0.15em; text-transform:uppercase; color:var(--green); margin-bottom:12px;">Nur bei LOUD</div>
-        <h2 style="font-family:'Barlow Condensed',sans-serif; font-weight:900; font-size:clamp(52px,7vw,90px); color:white; text-transform:uppercase; line-height:0.88; letter-spacing:-2px; margin-bottom:20px;">TAKE THE<br>PARTY<br>ANYWHERE</h2>
-        <p style="font-size:16px; color:rgba(255,255,255,0.5); line-height:1.65; margin-bottom:32px;">Donauinsel. Prater. Rooftop. Garten. Festival. Überall wo du feiern willst — ohne Strom, ohne Aufwand, ohne Kompromisse.</p>
-        <div style="display:flex; gap:12px; flex-wrap:wrap;">
-          <a href="https://partyloud.at/products/partykart" target="_blank" rel="noopener"
-            style="display:inline-flex; align-items:center; gap:8px; background:var(--green); color:var(--black); font-weight:700; font-size:15px; padding:14px 28px; border-radius:4px; text-decoration:none;">
-            📅 Jetzt buchen
-          </a>
-          <a href="https://wa.me/4367763947438" target="_blank" rel="noopener"
-            style="display:inline-flex; align-items:center; gap:8px; background:rgba(255,255,255,0.08); color:white; font-weight:600; font-size:14px; padding:14px 24px; border-radius:4px; text-decoration:none; border:1px solid rgba(255,255,255,0.15);">
-            💬 Fragen? WhatsApp
-          </a>
-        </div>
-      </div>
-
-      <div style="position:relative; border-radius:12px; overflow:hidden; aspect-ratio:0.8; background:#1A1A1A;">
-        <img src="assets/images/partykart.jpg" alt="PARTYKART geladen und bereit"
-          style="width:100%; height:100%; object-fit:cover; object-position:center 20%; filter:brightness(0.85); position:relative; z-index:1;"
-          onerror="this.style.display='none'">
-        <div style="position:absolute; inset:0; background:linear-gradient(135deg,rgba(124,255,46,0.08) 0%,transparent 60%);"></div>
-        <div style="position:absolute; bottom:20px; left:20px; background:rgba(0,0,0,0.85); backdrop-filter:blur(8px); border:1px solid rgba(124,255,46,0.3); border-radius:8px; padding:12px 16px; z-index:2;">
-          <div style="font-family:'Barlow Condensed',sans-serif; font-weight:900; font-size:28px; color:var(--green); line-height:1;">€189</div>
-          <div style="font-size:11px; color:rgba(255,255,255,0.45); margin-top:2px;">pro Tag · Intro-Preis</div>
-        </div>
-        <div style="position:absolute; top:12px; right:12px; background:rgba(0,0,0,0.6); color:rgba(255,255,255,0.4); font-size:10px; padding:4px 8px; border-radius:3px; z-index:2;">📸 Foto wird aktualisiert</div>
-      </div>
-    </div>
-
-    <!-- What's included -->
-    <div style="margin-bottom:48px;">
-      <div style="font-family:'Barlow Condensed',sans-serif; font-size:13px; font-weight:700; letter-spacing:0.12em; text-transform:uppercase; color:rgba(255,255,255,0.35); margin-bottom:20px;">Was dabei ist — alles inklusive</div>
-      <div style="display:grid; grid-template-columns:repeat(3,1fr); gap:12px;">
-        <div style="background:#1A1A1A; border:1px solid #2A2A2A; border-radius:10px; padding:20px;">
-          <div style="font-size:28px; margin-bottom:10px;">🔊</div>
-          <div style="font-family:'Barlow Condensed',sans-serif; font-weight:700; font-size:18px; color:white; text-transform:uppercase; margin-bottom:4px;">2× Soundboks 4</div>
-          <div style="font-size:12px; color:rgba(255,255,255,0.4); line-height:1.5;">126dB Stereo · 40h Akku · Wetterfest · Bluetooth &amp; XLR</div>
-        </div>
-        <div style="background:#1A1A1A; border:1px solid #2A2A2A; border-radius:10px; padding:20px;">
-          <div style="font-size:28px; margin-bottom:10px;">✨</div>
-          <div style="font-family:'Barlow Condensed',sans-serif; font-weight:700; font-size:18px; color:white; text-transform:uppercase; margin-bottom:4px;">Eurolite Laserbar Pro</div>
-          <div style="font-size:12px; color:rgba(255,255,255,0.4); line-height:1.5;">Professionelle Licht-Show · inkl. Stativ · Plug &amp; Play</div>
-        </div>
-        <div style="background:#1A1A1A; border:1px solid #2A2A2A; border-radius:10px; padding:20px;">
-          <div style="font-size:28px; margin-bottom:10px;">⚡</div>
-          <div style="font-family:'Barlow Condensed',sans-serif; font-weight:700; font-size:18px; color:white; text-transform:uppercase; margin-bottom:4px;">Fossibot F2400</div>
-          <div style="font-size:12px; color:rgba(255,255,255,0.4); line-height:1.5;">2400W Powerstation · Versorgt das gesamte Setup stundenlang</div>
-        </div>
-        <div style="background:#1A1A1A; border:1px solid #2A2A2A; border-radius:10px; padding:20px;">
-          <div style="font-size:28px; margin-bottom:10px;">🎯</div>
-          <div style="font-family:'Barlow Condensed',sans-serif; font-weight:700; font-size:18px; color:white; text-transform:uppercase; margin-bottom:4px;">2× Lautsprecher-Stative</div>
-          <div style="font-size:12px; color:rgba(255,255,255,0.4); line-height:1.5;">Optimale Ausrichtung · Stabil auch auf unebenem Untergrund</div>
-        </div>
-        <div style="background:#1A1A1A; border:1px solid #2A2A2A; border-radius:10px; padding:20px;">
-          <div style="font-size:28px; margin-bottom:10px;">🛒</div>
-          <div style="font-family:'Barlow Condensed',sans-serif; font-weight:700; font-size:18px; color:white; text-transform:uppercase; margin-bottom:4px;">Gartenwagen</div>
-          <div style="font-size:12px; color:rgba(255,255,255,0.4); line-height:1.5;">Alles auf einmal transportieren · Geländegängig · Kein Schleppen</div>
-        </div>
-        <div style="background:linear-gradient(135deg,rgba(124,255,46,0.12) 0%,rgba(124,255,46,0.04) 100%); border:1px solid rgba(124,255,46,0.25); border-radius:10px; padding:20px;">
-          <div style="font-size:28px; margin-bottom:10px;">🏆</div>
-          <div style="font-family:'Barlow Condensed',sans-serif; font-weight:700; font-size:18px; color:var(--green); text-transform:uppercase; margin-bottom:4px;">100% Kabellos</div>
-          <div style="font-size:12px; color:rgba(255,255,255,0.5); line-height:1.5;">Kein Strom nötig. Kein Generator. Kein Setup-Stress.</div>
-        </div>
-      </div>
-    </div>
-
-    <!-- Perfect for -->
-    <div style="background:#161616; border:1px solid #222; border-radius:12px; padding:32px 36px; display:flex; justify-content:space-between; align-items:center; flex-wrap:wrap; gap:24px;">
-      <div>
-        <div style="font-family:'Barlow Condensed',sans-serif; font-size:13px; font-weight:700; letter-spacing:0.12em; text-transform:uppercase; color:rgba(255,255,255,0.35); margin-bottom:12px;">Perfekt für</div>
-        <div style="display:flex; flex-wrap:wrap; gap:8px;">
-          <span style="background:rgba(255,255,255,0.07); color:rgba(255,255,255,0.7); font-size:13px; font-weight:500; padding:6px 14px; border-radius:20px;">🏖️ Donauinsel</span>
-          <span style="background:rgba(255,255,255,0.07); color:rgba(255,255,255,0.7); font-size:13px; font-weight:500; padding:6px 14px; border-radius:20px;">🌳 Prater &amp; Parks</span>
-          <span style="background:rgba(255,255,255,0.07); color:rgba(255,255,255,0.7); font-size:13px; font-weight:500; padding:6px 14px; border-radius:20px;">🏡 Gartenpartys</span>
-          <span style="background:rgba(255,255,255,0.07); color:rgba(255,255,255,0.7); font-size:13px; font-weight:500; padding:6px 14px; border-radius:20px;">🏙️ Rooftops</span>
-          <span style="background:rgba(255,255,255,0.07); color:rgba(255,255,255,0.7); font-size:13px; font-weight:500; padding:6px 14px; border-radius:20px;">🎪 Festivals</span>
-          <span style="background:rgba(255,255,255,0.07); color:rgba(255,255,255,0.7); font-size:13px; font-weight:500; padding:6px 14px; border-radius:20px;">📍 Überall ohne Strom</span>
-        </div>
-      </div>
-      <div style="text-align:right;">
-        <div style="font-family:'Barlow Condensed',sans-serif; font-weight:900; font-size:48px; color:var(--green); line-height:1;">€189</div>
-        <div style="font-size:13px; color:rgba(255,255,255,0.35); margin-bottom:12px;">pro Tag · Intro-Preis</div>
+        <div style="font-family:'Barlow Condensed',sans-serif; font-weight:900; font-size:42px; color:var(--green); line-height:1;">€189 <span style="font-size:16px; color:rgba(255,255,255,0.35); font-family:'Barlow',sans-serif; font-weight:400;">/ Tag</span></div>
         <a href="https://partyloud.at/products/partykart" target="_blank" rel="noopener"
-          style="display:inline-block; background:var(--green); color:var(--black); font-weight:700; font-size:14px; padding:12px 24px; border-radius:4px; text-decoration:none;">
-          Jetzt buchen →
+          style="display:inline-flex; align-items:center; gap:8px; background:var(--green); color:var(--black); font-weight:700; font-size:14px; padding:12px 24px; border-radius:4px; text-decoration:none;">
+          📅 Jetzt buchen
+        </a>
+        <a href="https://wa.me/4367763947438" target="_blank" rel="noopener"
+          style="display:inline-flex; align-items:center; gap:8px; background:rgba(255,255,255,0.08); color:white; font-weight:600; font-size:14px; padding:12px 20px; border-radius:4px; text-decoration:none; border:1px solid rgba(255,255,255,0.15);">
+          💬 WhatsApp
         </a>
       </div>
     </div>
-
+    <div style="position:relative; overflow:hidden; background:#1A1A1A; min-height:280px;">
+      <img src="assets/images/partykart.jpg" alt="PARTYKART — Mobiles Party Setup"
+        style="width:100%; height:100%; object-fit:cover; object-position:center 30%; filter:brightness(0.75);"
+        onerror="this.style.display='none'">
+      <div style="position:absolute; inset:0; background:linear-gradient(to right,var(--black) 0%,transparent 35%);"></div>
+    </div>
   </div>
+
+  <!-- What's included + perfect for -->
+  <div style="border-top:1px solid #1A1A1A; padding:32px 56px 44px;" class="pk-bottom">
+    <div data-i18n="pk.included" style="font-family:'Barlow Condensed',sans-serif; font-size:12px; font-weight:700; letter-spacing:0.12em; text-transform:uppercase; color:rgba(255,255,255,0.3); margin-bottom:18px;">Was dabei ist — alles inklusive</div>
+    <div style="display:grid; grid-template-columns:repeat(5,1fr); gap:10px; margin-bottom:20px;" class="pk-items-grid">
+      <div style="background:#141414; border:1px solid #222; border-radius:8px; padding:16px;">
+        <div style="font-size:20px; margin-bottom:8px;">🔊</div>
+        <div style="font-family:'Barlow Condensed',sans-serif; font-weight:700; font-size:14px; color:white; text-transform:uppercase; margin-bottom:3px;">2× Soundboks 4</div>
+        <div data-i18n="pk.item1.desc" style="font-size:11px; color:rgba(255,255,255,0.35); line-height:1.4;">126dB · 40h Akku · Wetterfest</div>
+      </div>
+      <div style="background:#141414; border:1px solid #222; border-radius:8px; padding:16px;">
+        <div style="font-size:20px; margin-bottom:8px;">✨</div>
+        <div style="font-family:'Barlow Condensed',sans-serif; font-weight:700; font-size:14px; color:white; text-transform:uppercase; margin-bottom:3px;">Eurolite Laserbar</div>
+        <div data-i18n="pk.item2.desc" style="font-size:11px; color:rgba(255,255,255,0.35); line-height:1.4;">Profi Lichtshow · Plug &amp; Play</div>
+      </div>
+      <div style="background:#141414; border:1px solid #222; border-radius:8px; padding:16px;">
+        <div style="font-size:20px; margin-bottom:8px;">⚡</div>
+        <div style="font-family:'Barlow Condensed',sans-serif; font-weight:700; font-size:14px; color:white; text-transform:uppercase; margin-bottom:3px;">Fossibot F2400</div>
+        <div data-i18n="pk.item3.desc" style="font-size:11px; color:rgba(255,255,255,0.35); line-height:1.4;">2400W · Versorgt alles stundenlang</div>
+      </div>
+      <div style="background:#141414; border:1px solid #222; border-radius:8px; padding:16px;">
+        <div style="font-size:20px; margin-bottom:8px;">🎯</div>
+        <div style="font-family:'Barlow Condensed',sans-serif; font-weight:700; font-size:14px; color:white; text-transform:uppercase; margin-bottom:3px;">2× Stative</div>
+        <div data-i18n="pk.item4.desc" style="font-size:11px; color:rgba(255,255,255,0.35); line-height:1.4;">Optimal ausgerichtet · Stabil</div>
+      </div>
+      <div style="background:linear-gradient(135deg,rgba(124,255,46,0.12),rgba(124,255,46,0.04)); border:1px solid rgba(124,255,46,0.2); border-radius:8px; padding:16px;">
+        <div style="font-size:20px; margin-bottom:8px;">🛒</div>
+        <div style="font-family:'Barlow Condensed',sans-serif; font-weight:700; font-size:14px; color:var(--green); text-transform:uppercase; margin-bottom:3px;">100% Kabellos</div>
+        <div data-i18n="pk.item5.desc" style="font-size:11px; color:rgba(255,255,255,0.4); line-height:1.4;">Gartenwagen · Kein Generator</div>
+      </div>
+    </div>
+    <div style="display:flex; flex-wrap:wrap; align-items:center; gap:8px;">
+      <span data-i18n="pk.for" style="font-size:12px; color:rgba(255,255,255,0.35); font-weight:600; margin-right:4px;">Perfekt für:</span>
+      <span style="background:rgba(255,255,255,0.07); color:rgba(255,255,255,0.65); font-size:12px; font-weight:500; padding:5px 12px; border-radius:20px;">🏖️ Donauinsel</span>
+      <span style="background:rgba(255,255,255,0.07); color:rgba(255,255,255,0.65); font-size:12px; font-weight:500; padding:5px 12px; border-radius:20px;">🌳 Prater &amp; Parks</span>
+      <span style="background:rgba(255,255,255,0.07); color:rgba(255,255,255,0.65); font-size:12px; font-weight:500; padding:5px 12px; border-radius:20px;">🏡 Gartenpartys</span>
+      <span style="background:rgba(255,255,255,0.07); color:rgba(255,255,255,0.65); font-size:12px; font-weight:500; padding:5px 12px; border-radius:20px;">🏙️ Rooftops</span>
+      <span style="background:rgba(255,255,255,0.07); color:rgba(255,255,255,0.65); font-size:12px; font-weight:500; padding:5px 12px; border-radius:20px;">🎪 Festivals</span>
+      <span style="background:rgba(255,255,255,0.07); color:rgba(255,255,255,0.65); font-size:12px; font-weight:500; padding:5px 12px; border-radius:20px;">📍 Überall ohne Strom</span>
+    </div>
+  </div>
+
 </section>
 
 
 <!-- ══════════════════════════
-     OUR RANGE
+     OUR RANGE — hidden, re-insert when ready
      ══════════════════════════ -->
+<!--
 <section class="range-section texture" id="range">
   <div class="range-header">
     <div>
@@ -497,7 +444,7 @@
 
     <a href="https://partyloud.at/products/loud-houseparty-paket" class="range-card" target="_blank" rel="noopener">
       <div class="range-img">
-        <div class="quarter-circle" style="opacity:0.6;"><div class="quarter-circle-inner"></div></div>
+
         <img src="https://images.booqablecdn.com/uploads/30a240e4a6318711ab69a343e822dee5/photo/photo/e1037648-d1da-4b2d-81c3-c37023b7b224/1720532099-478694364393536-0002-2519/JBL_PARTYBOX_STAGE_320_HERO_2_47988_x3.png"
           alt="Hausparty Setup" loading="lazy">
       </div>
@@ -512,7 +459,7 @@
 
     <a href="https://partyloud.at/products/louder-partypaket" class="range-card" target="_blank" rel="noopener">
       <div class="range-img">
-        <div class="quarter-circle" style="opacity:0.6;"><div class="quarter-circle-inner"></div></div>
+
         <img src="https://images.booqablecdn.com/uploads/30a240e4a6318711ab69a343e822dee5/photo/photo/65b2450c-2c84-4583-8b37-8b9ca410c572/1727879373-611028577275545-0018-1047/upload.png"
           alt="Gartenparty Setup" loading="lazy">
       </div>
@@ -527,7 +474,7 @@
 
     <a href="https://partyloud.at/collections/aktiv-lautsprecher" class="range-card" target="_blank" rel="noopener">
       <div class="range-img">
-        <div class="quarter-circle" style="opacity:0.6;"><div class="quarter-circle-inner"></div></div>
+
         <img src="https://images.booqablecdn.com/uploads/30a240e4a6318711ab69a343e822dee5/photo/photo/61f93336-7d48-44da-8b38-1ad30e853172/1720533540-991846278218258-0002-5408/eurolite-led-kls-laser-bar-pro-fx-light-set_1_LIG0013786-000.jpg"
           alt="DJ Setup" loading="lazy">
       </div>
@@ -558,6 +505,107 @@
 
   </div>
 </section>
+-->
+
+
+<!-- ══════════════════════════
+     FOSSIBOT POWERSTATIONS
+     ══════════════════════════ -->
+<section id="powerstation" style="position:relative; overflow:hidden; background:#0A0A0A; min-height:600px; display:flex; align-items:center;">
+
+  <!-- Backdrop photo — contain keeps full powerstation visible, anchored right -->
+  <div style="position:absolute; inset:0; z-index:0; background:#0A0A0A;">
+    <img src="assets/images/fossibot.jpg" alt="Fossibot F2400 Powerstation"
+      style="width:100%; height:100%; object-fit:cover; object-position:center bottom; filter:brightness(0.6);"
+      onerror="this.style.display='none'">
+    <!-- Gradient: dark on left for text readability, fades to transparent on right -->
+    <div style="position:absolute; inset:0; background:linear-gradient(to right, rgba(10,10,10,1) 0%, rgba(10,10,10,0.97) 30%, rgba(10,10,10,0.5) 55%, transparent 80%);"></div>
+  </div>
+
+  <!-- Content — left half only, right stays open for the photo -->
+  <div style="position:relative; z-index:1; width:100%; padding:80px 56px 100px;" class="ps-wrap">
+    <div style="max-width:520px;" class="ps-inner">
+
+      <div data-i18n="ps.badge" style="display:inline-flex; align-items:center; gap:8px; background:var(--green); color:var(--black); font-size:11px; font-weight:700; letter-spacing:0.1em; text-transform:uppercase; padding:4px 12px; border-radius:3px; margin-bottom:20px;">
+        ⚡ Saubere Energie · Überall
+      </div>
+      <h2 data-i18n="ps.title" style="font-family:'Barlow Condensed',sans-serif; font-weight:900; font-size:clamp(48px,6vw,80px); color:white; text-transform:uppercase; line-height:0.9; letter-spacing:-2px; margin-bottom:20px;">POWER OHNE GRENZEN</h2>
+      <p data-i18n="ps.desc" style="font-size:16px; color:rgba(255,255,255,0.55); line-height:1.65; margin-bottom:28px;">Keine Generatoren, kein Lärm, kein Diesel. Unsere Fossibot F2400 Powerstationen liefern saubere, portable Energie — für jede Location und jeden Anlass.</p>
+
+      <!-- Use-case cards: 2×2 grid, max-width keeps them left -->
+      <div style="display:grid; grid-template-columns:1fr 1fr; gap:10px; margin-bottom:28px;" class="ps-cards">
+
+        <div style="background:rgba(0,0,0,0.5); border:1px solid rgba(255,255,255,0.1); border-radius:10px; padding:16px; backdrop-filter:blur(8px);">
+          <div style="font-size:22px; margin-bottom:8px;">🔊</div>
+          <div data-i18n="ps.card1.title" style="font-family:'Barlow Condensed',sans-serif; font-weight:700; font-size:15px; color:white; text-transform:uppercase; margin-bottom:3px;">Lautsprecher</div>
+          <div data-i18n="ps.card1.desc" style="font-size:11px; color:rgba(255,255,255,0.4); line-height:1.5;">Aktiv-Speaker & PA-Anlagen — stundenlang, kein Strom nötig</div>
+        </div>
+
+        <div style="background:rgba(0,0,0,0.5); border:1px solid rgba(255,255,255,0.1); border-radius:10px; padding:16px; backdrop-filter:blur(8px);">
+          <div style="font-size:22px; margin-bottom:8px;">✨</div>
+          <div data-i18n="ps.card2.title" style="font-family:'Barlow Condensed',sans-serif; font-weight:700; font-size:15px; color:white; text-transform:uppercase; margin-bottom:3px;">Licht & Effekte</div>
+          <div data-i18n="ps.card2.desc" style="font-size:11px; color:rgba(255,255,255,0.4); line-height:1.5;">Laserbar, Nebel & LEDs — überall ohne Stromanschluss</div>
+        </div>
+
+        <div style="background:rgba(0,0,0,0.5); border:1px solid rgba(255,255,255,0.1); border-radius:10px; padding:16px; backdrop-filter:blur(8px);">
+          <div style="font-size:22px; margin-bottom:8px;">🎛️</div>
+          <div data-i18n="ps.card3.title" style="font-family:'Barlow Condensed',sans-serif; font-weight:700; font-size:15px; color:white; text-transform:uppercase; margin-bottom:3px;">DJ Equipment</div>
+          <div data-i18n="ps.card3.desc" style="font-size:11px; color:rgba(255,255,255,0.4); line-height:1.5;">Controller, Mixer & Monitore — volle Performance im Freien</div>
+        </div>
+
+        <div style="background:rgba(0,0,0,0.5); border:1px solid rgba(255,255,255,0.1); border-radius:10px; padding:16px; backdrop-filter:blur(8px);">
+          <div style="font-size:22px; margin-bottom:8px;">📷</div>
+          <div data-i18n="ps.card4.title" style="font-family:'Barlow Condensed',sans-serif; font-weight:700; font-size:15px; color:white; text-transform:uppercase; margin-bottom:3px;">Filming & Content</div>
+          <div data-i18n="ps.card4.desc" style="font-size:11px; color:rgba(255,255,255,0.4); line-height:1.5;">Kameras, Drohnen & Laptops — ideal für Drehtage on location</div>
+        </div>
+
+      </div>
+
+      <div style="display:flex; gap:12px; flex-wrap:wrap;">
+        <a href="https://partyloud.at/products/fossibot-f2400" target="_blank" rel="noopener"
+          style="display:inline-flex; align-items:center; gap:8px; background:var(--green); color:var(--black); font-weight:700; font-size:14px; padding:13px 26px; border-radius:4px; text-decoration:none;">
+          <span data-i18n="ps.cta">📅 Jetzt buchen</span>
+        </a>
+      </div>
+
+    </div>
+  </div>
+
+  <!-- Specs strip -->
+  <div style="position:absolute; bottom:0; left:0; right:0; z-index:1; background:rgba(0,0,0,0.7); backdrop-filter:blur(8px); border-top:1px solid rgba(255,255,255,0.08); padding:16px 56px; display:flex; gap:40px; flex-wrap:wrap; align-items:center;" class="ps-specs">
+    <div style="display:flex; align-items:center; gap:10px;">
+      <div style="font-size:20px;">⚡</div>
+      <div><div style="font-family:'Barlow Condensed',sans-serif; font-weight:700; font-size:18px; color:var(--green);">2400W</div><div data-i18n="ps.spec1" style="font-size:11px; color:rgba(255,255,255,0.4);">Ausgangsleistung</div></div>
+    </div>
+    <div style="width:1px; height:32px; background:rgba(255,255,255,0.1); flex-shrink:0;"></div>
+    <div style="display:flex; align-items:center; gap:10px;">
+      <div style="font-size:20px;">🔋</div>
+      <div><div style="font-family:'Barlow Condensed',sans-serif; font-weight:700; font-size:18px; color:var(--green);">2048 Wh</div><div data-i18n="ps.spec2" style="font-size:11px; color:rgba(255,255,255,0.4);">Kapazität</div></div>
+    </div>
+    <div style="width:1px; height:32px; background:rgba(255,255,255,0.1); flex-shrink:0;"></div>
+    <div style="display:flex; align-items:center; gap:10px;">
+      <div style="font-size:20px;">🌱</div>
+      <div><div data-i18n="ps.spec3" style="font-family:'Barlow Condensed',sans-serif; font-weight:700; font-size:18px; color:var(--green);">100% sauber</div><div data-i18n="ps.spec3.sub" style="font-size:11px; color:rgba(255,255,255,0.4);">Kein Generator · Kein Lärm</div></div>
+    </div>
+    <div style="width:1px; height:32px; background:rgba(255,255,255,0.1); flex-shrink:0;"></div>
+    <div style="display:flex; align-items:center; gap:10px;">
+      <div style="font-size:20px;">🔌</div>
+      <div><div style="font-family:'Barlow Condensed',sans-serif; font-weight:700; font-size:18px; color:var(--green);">AC + USB + DC</div><div data-i18n="ps.spec4" style="font-size:11px; color:rgba(255,255,255,0.4);">Alle Gerätetypen</div></div>
+    </div>
+  </div>
+
+</section>
+
+<style>
+@media (max-width: 900px) {
+  .ps-wrap { padding: 56px 24px 90px !important; }
+  .ps-specs { padding: 14px 24px !important; gap: 20px !important; }
+}
+@media (max-width: 600px) {
+  .ps-cards { grid-template-columns: 1fr !important; }
+  .ps-inner { max-width: 100% !important; }
+}
+</style>
 
 
 <!-- ══════════════════════════
@@ -627,13 +675,14 @@
   50% { opacity:0.5; transform:scale(0.85); }
 }
 @media (max-width: 900px) {
-  #partykart-section > div > div:first-child { grid-template-columns: 1fr !important; gap: 32px !important; }
-  #partykart-section > div > div:nth-child(2) > div:last-child { grid-template-columns: 1fr 1fr !important; }
-  #partykart-section { padding: 60px 20px !important; }
+  .pk-hero-row { grid-template-columns: 1fr !important; }
+  .pk-hero-text { padding: 48px 28px 36px !important; }
+  .pk-bottom { padding: 28px 28px 36px !important; }
+  .pk-items-grid { grid-template-columns: 1fr 1fr !important; }
   .delivery-content { padding: 48px 20px !important; }
 }
 @media (max-width: 600px) {
-  #partykart-section > div > div:nth-child(2) > div:last-child { grid-template-columns: 1fr !important; }
+  .pk-items-grid { grid-template-columns: 1fr !important; }
 }
 </style>
 
@@ -650,7 +699,7 @@
     <a href="https://www.google.com/maps/place/LOUD+-+Event+Equipment+Vermietung/@48.1924763,16.3567589,17z"
       class="google-badge" target="_blank" rel="noopener">
       <div class="g-dot"></div>
-      <span>⭐ 5.0 · 12 Bewertungen auf Google</span>
+      <span data-i18n="rev.google">⭐ 5.0 · 12 Bewertungen auf Google</span>
     </a>
   </div>
 
@@ -703,7 +752,7 @@
     <a href="https://www.google.com/maps/place/LOUD+-+Event+Equipment+Vermietung/@48.1924763,16.3567589,17z"
       target="_blank" rel="noopener" class="google-badge">
       <div class="g-dot"></div>
-      <span>Alle Bewertungen auf Google ansehen →</span>
+      <span data-i18n="rev.all">Alle Bewertungen auf Google ansehen →</span>
     </a>
   </div>
 </section>
@@ -748,43 +797,43 @@
   <div class="faq-grid">
 
     <div class="faq-item">
-      <div class="faq-q">Brauche ich technisches Wissen? <span class="faq-toggle">+</span></div>
-      <div class="faq-a">Kurz gesagt: nein. Unsere Systeme sind so einfach wie möglich gehalten — vor allem die Akku-Lautsprecher, die einfach per Bluetooth verbunden werden. Bei komplexeren Setups schicken wir dir vor der Abholung eine PDF-Anleitung mit Aufbau und Troubleshooting, damit du für alles gewappnet bist.</div>
+      <div class="faq-q"><span data-i18n="faq.1.q">Brauche ich technisches Wissen?</span> <span class="faq-toggle">+</span></div>
+      <div class="faq-a" data-i18n="faq.1.a">Kurz gesagt: nein. Unsere Systeme sind so einfach wie möglich gehalten — vor allem die Akku-Lautsprecher, die einfach per Bluetooth verbunden werden. Bei komplexeren Setups schicken wir dir vor der Abholung eine PDF-Anleitung mit Aufbau und Troubleshooting, damit du für alles gewappnet bist.</div>
     </div>
 
     <div class="faq-item">
-      <div class="faq-q">Gibt es eine Kaution oder einen Selbstbehalt? <span class="faq-toggle">+</span></div>
-      <div class="faq-a">Keine Kaution — du hinterlegst nichts im Voraus. Das Equipment ist vollversichert. Bei normaler Nutzung entstehen keinerlei Kosten. Nur bei grober Fahrlässigkeit greift ein Selbstbehalt von €150 — deutlich weniger als bei anderen Anbietern. Für nur €9 kannst du diesen beim Checkout auf €0 reduzieren.</div>
+      <div class="faq-q"><span data-i18n="faq.2.q">Gibt es eine Kaution oder einen Selbstbehalt?</span> <span class="faq-toggle">+</span></div>
+      <div class="faq-a" data-i18n="faq.2.a">Keine Kaution — du hinterlegst nichts im Voraus. Das Equipment ist vollversichert. Bei normaler Nutzung entstehen keinerlei Kosten. Nur bei grober Fahrlässigkeit greift ein Selbstbehalt von €150 — deutlich weniger als bei anderen Anbietern. Für nur €9 kannst du diesen beim Checkout auf €0 reduzieren.</div>
     </div>
 
     <div class="faq-item">
-      <div class="faq-q">Kann ich auch kurzfristig buchen? <span class="faq-toggle">+</span></div>
-      <div class="faq-a">Ja — du kannst theoretisch eine Stunde im Voraus buchen, solange das Equipment verfügbar ist. Bei Abholbuchungen kein Problem. Bei Lieferungen unter 24h im Voraus melden wir uns sofort und finden gemeinsam eine Lösung.</div>
+      <div class="faq-q"><span data-i18n="faq.3.q">Kann ich auch kurzfristig buchen?</span> <span class="faq-toggle">+</span></div>
+      <div class="faq-a" data-i18n="faq.3.a">Ja — du kannst theoretisch eine Stunde im Voraus buchen, solange das Equipment verfügbar ist. Bei Abholbuchungen kein Problem. Bei Lieferungen unter 24h im Voraus melden wir uns sofort und finden gemeinsam eine Lösung.</div>
     </div>
 
     <div class="faq-item">
-      <div class="faq-q">Wie funktioniert die Lieferung? <span class="faq-toggle">+</span></div>
-      <div class="faq-a">Lieferung &amp; Abholung nach dem Event kostet €49 Flatrate in ganz Wien. Aufbau &amp; Soundcheck gibt's ab €99 on top. Buchung bis 18:00 Uhr = Lieferung am nächsten Tag garantiert.</div>
+      <div class="faq-q"><span data-i18n="faq.4.q">Wie funktioniert die Lieferung?</span> <span class="faq-toggle">+</span></div>
+      <div class="faq-a" data-i18n="faq.4.a">Lieferung &amp; Abholung nach dem Event kostet €49 Flatrate in ganz Wien. Aufbau &amp; Soundcheck gibt's ab €99 on top. Buchung bis 18:00 Uhr = Lieferung am nächsten Tag garantiert.</div>
     </div>
 
     <div class="faq-item">
-      <div class="faq-q">Liefert ihr auch außerhalb von Wien? <span class="faq-toggle">+</span></div>
-      <div class="faq-a">Ja — wir liefern innerhalb von 99km ab der Wiener Stadtgrenze, also ganz Niederösterreich. Den Lieferaufpreis kannst du direkt beim Checkout hinzufügen. Für größere Distanzen einfach anfragen.</div>
+      <div class="faq-q"><span data-i18n="faq.5.q">Liefert ihr auch außerhalb von Wien?</span> <span class="faq-toggle">+</span></div>
+      <div class="faq-a" data-i18n="faq.5.a">Ja — wir liefern innerhalb von 99km ab der Wiener Stadtgrenze, also ganz Niederösterreich. Den Lieferaufpreis kannst du direkt beim Checkout hinzufügen. Für größere Distanzen einfach anfragen.</div>
     </div>
 
     <div class="faq-item">
-      <div class="faq-q">Kann ich eigene Musik abspielen? <span class="faq-toggle">+</span></div>
-      <div class="faq-a">Absolut — fast alle unsere Speaker verbinden sich per Bluetooth, AUX oder USB. DJ-Controller oder Mixer anschließen geht auch — gib uns nach der Buchung kurz Bescheid welches Kabel du brauchst und wir legen's dazu.</div>
+      <div class="faq-q"><span data-i18n="faq.6.q">Kann ich eigene Musik abspielen?</span> <span class="faq-toggle">+</span></div>
+      <div class="faq-a" data-i18n="faq.6.a">Absolut — fast alle unsere Speaker verbinden sich per Bluetooth, AUX oder USB. DJ-Controller oder Mixer anschließen geht auch — gib uns nach der Buchung kurz Bescheid welches Kabel du brauchst und wir legen's dazu.</div>
     </div>
 
     <div class="faq-item">
-      <div class="faq-q">Was passiert wenn etwas kaputt geht? <span class="faq-toggle">+</span></div>
-      <div class="faq-a">Passiert — kein Drama. Das Equipment ist versichert. Wichtig: meld dich sofort bei uns, damit wir schnell reagieren können. Bei normalen Gebrauchsspuren entstehen keine Kosten — der €150 Selbstbehalt greift nur bei grober Fahrlässigkeit.</div>
+      <div class="faq-q"><span data-i18n="faq.7.q">Was passiert wenn etwas kaputt geht?</span> <span class="faq-toggle">+</span></div>
+      <div class="faq-a" data-i18n="faq.7.a">Passiert — kein Drama. Das Equipment ist versichert. Wichtig: meld dich sofort bei uns, damit wir schnell reagieren können. Bei normalen Gebrauchsspuren entstehen keine Kosten — der €150 Selbstbehalt greift nur bei grober Fahrlässigkeit.</div>
     </div>
 
     <div class="faq-item">
-      <div class="faq-q">Kann ich mein Paket anpassen? <span class="faq-toggle">+</span></div>
-      <div class="faq-a">Ja — beim Checkout kannst du direkt Extra-Equipment dazubuchen. Auf unserer Produktseite siehst du alles im Sortiment. Wenn du etwas Bestimmtes suchst, schick uns kurz eine WhatsApp oder Email — wir antworten schnell.</div>
+      <div class="faq-q"><span data-i18n="faq.8.q">Kann ich mein Paket anpassen?</span> <span class="faq-toggle">+</span></div>
+      <div class="faq-a" data-i18n="faq.8.a">Ja — beim Checkout kannst du direkt Extra-Equipment dazubuchen. Auf unserer Produktseite siehst du alles im Sortiment. Wenn du etwas Bestimmtes suchst, schick uns kurz eine WhatsApp oder Email — wir antworten schnell.</div>
     </div>
 
   </div>
@@ -820,8 +869,7 @@
 <footer>
   <div class="footer-top">
     <div>
-      <!-- Replace with: <img src="assets/images/logo-white.png" alt="LOUD" style="height:36px; margin-bottom:16px;"> when logo file is ready -->
-      <a href="/" class="footer-logo-wordmark">LOUD</a>
+      <a href="/"><img src="assets/images/logo-white.png" alt="LOUD" style="height:36px; margin-bottom:16px; display:block;"></a>
       <p class="footer-tagline" data-i18n="footer.tagline">Party Equipment mieten in Wien und Niederösterreich. Einfach, schnell, professionell.</p>
       <div class="footer-addr">
         📍 Schönbrunner Straße 36/23, 1050 Wien<br>
@@ -854,7 +902,7 @@
     </div>
 
     <div class="footer-col">
-      <h4>Kontakt</h4>
+      <h4 data-i18n="footer.contact">Kontakt</h4>
       <ul>
         <li>
           <a href="https://wa.me/4367763947438" target="_blank" rel="noopener" class="footer-wa-inline">
@@ -927,5 +975,6 @@
 
 
 <script src="assets/js/main.js"></script>
+<script src="https://a7e742e8-5031-409c-aeeb-15cd338c66c7.assets.booqable.com/v2/booqable.js"></script>
 </body>
 </html>

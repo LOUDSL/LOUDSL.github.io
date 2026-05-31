@@ -66,6 +66,54 @@ const translations = {
     'premium.cta': '✉️ Anfrage per E-Mail',
     'footer.tagline': 'Party Equipment mieten in Wien und Niederösterreich. Einfach, schnell, professionell.',
     'footer.wa': '💬 WhatsApp uns',
+    'ps.badge': '⚡ Saubere Energie · Überall',
+    'ps.title': 'POWER OHNE GRENZEN',
+    'ps.desc': 'Keine Generatoren, kein Lärm, kein Diesel. Unsere Fossibot F2400 Powerstationen liefern saubere, portable Energie — für jede Location und jeden Anlass.',
+    'ps.card1.title': 'Lautsprecher',
+    'ps.card1.desc': 'Aktiv-Speaker & PA-Anlagen — stundenlang, kein Strom nötig',
+    'ps.card2.title': 'Licht & Effekte',
+    'ps.card2.desc': 'Laserbar, Nebel & LEDs — überall ohne Stromanschluss',
+    'ps.card3.title': 'DJ Equipment',
+    'ps.card3.desc': 'Controller, Mixer & Monitore — volle Performance im Freien',
+    'ps.card4.title': 'Filming & Content',
+    'ps.card4.desc': 'Kameras, Drohnen & Laptops — ideal für Drehtage on location',
+    'ps.cta': '📅 Jetzt buchen',
+    'ps.spec1': 'Ausgangsleistung',
+    'ps.spec2': 'Kapazität',
+    'ps.spec3': '100% sauber',
+    'ps.spec3.sub': 'Kein Generator · Kein Lärm',
+    'ps.spec4': 'Alle Gerätetypen',
+    'booking.label': 'Direkt online buchen',
+    'booking.title': 'Alle Geräte. Verfügbarkeit prüfen.',
+    'booking.sub': 'Wähle dein Equipment, prüfe die Verfügbarkeit und buche direkt — ohne Umwege.',
+    'pk.badge': '⚡ Neu — Exklusiv bei LOUD',
+    'pk.desc': 'Donauinsel, Prater, Rooftop — 100% batteriebetrieben, kein Strom nötig, überall einsetzbar.',
+    'pk.included': 'Was dabei ist — alles inklusive',
+    'pk.item1.desc': '126dB · 40h Akku · Wetterfest',
+    'pk.item2.desc': 'Profi Lichtshow · Plug & Play',
+    'pk.item3.desc': '2400W · Versorgt alles stundenlang',
+    'pk.item4.desc': 'Optimal ausgerichtet · Stabil',
+    'pk.item5.desc': 'Gartenwagen · Kein Generator',
+    'pk.for': 'Perfekt für:',
+    'rev.google': '⭐ 5.0 · 12 Bewertungen auf Google',
+    'rev.all': 'Alle Bewertungen auf Google ansehen →',
+    'faq.1.q': 'Brauche ich technisches Wissen?',
+    'faq.1.a': 'Kurz gesagt: nein. Unsere Systeme sind so einfach wie möglich gehalten — vor allem die Akku-Lautsprecher, die einfach per Bluetooth verbunden werden. Bei komplexeren Setups schicken wir dir vor der Abholung eine PDF-Anleitung mit Aufbau und Troubleshooting, damit du für alles gewappnet bist.',
+    'faq.2.q': 'Gibt es eine Kaution oder einen Selbstbehalt?',
+    'faq.2.a': 'Keine Kaution — du hinterlegst nichts im Voraus. Das Equipment ist vollversichert. Bei normaler Nutzung entstehen keinerlei Kosten. Nur bei grober Fahrlässigkeit greift ein Selbstbehalt von €150 — deutlich weniger als bei anderen Anbietern. Für nur €9 kannst du diesen beim Checkout auf €0 reduzieren.',
+    'faq.3.q': 'Kann ich auch kurzfristig buchen?',
+    'faq.3.a': 'Ja — du kannst theoretisch eine Stunde im Voraus buchen, solange das Equipment verfügbar ist. Bei Abholbuchungen kein Problem. Bei Lieferungen unter 24h im Voraus melden wir uns sofort und finden gemeinsam eine Lösung.',
+    'faq.4.q': 'Wie funktioniert die Lieferung?',
+    'faq.4.a': 'Lieferung & Abholung nach dem Event kostet €49 Flatrate in ganz Wien. Aufbau & Soundcheck gibt\'s ab €99 on top. Buchung bis 18:00 Uhr = Lieferung am nächsten Tag garantiert.',
+    'faq.5.q': 'Liefert ihr auch außerhalb von Wien?',
+    'faq.5.a': 'Ja — wir liefern innerhalb von 99km ab der Wiener Stadtgrenze, also ganz Niederösterreich. Den Lieferaufpreis kannst du direkt beim Checkout hinzufügen. Für größere Distanzen einfach anfragen.',
+    'faq.6.q': 'Kann ich eigene Musik abspielen?',
+    'faq.6.a': 'Absolut — fast alle unsere Speaker verbinden sich per Bluetooth, AUX oder USB. DJ-Controller oder Mixer anschließen geht auch — gib uns nach der Buchung kurz Bescheid welches Kabel du brauchst und wir legen\'s dazu.',
+    'faq.7.q': 'Was passiert wenn etwas kaputt geht?',
+    'faq.7.a': 'Passiert — kein Drama. Das Equipment ist versichert. Wichtig: meld dich sofort bei uns, damit wir schnell reagieren können. Bei normalen Gebrauchsspuren entstehen keine Kosten — der €150 Selbstbehalt greift nur bei grober Fahrlässigkeit.',
+    'faq.8.q': 'Kann ich mein Paket anpassen?',
+    'faq.8.a': 'Ja — beim Checkout kannst du direkt Extra-Equipment dazubuchen. Auf unserer Produktseite siehst du alles im Sortiment. Wenn du etwas Bestimmtes suchst, schick uns kurz eine WhatsApp oder Email — wir antworten schnell.',
+    'footer.contact': 'Kontakt',
     'chatbot.greeting': 'Hey! 👋 Welche Art von Event planst du?',
     'chatbot.placeholder': 'Schreib eine Nachricht…',
     'chatbot.title': 'Party Assistent',
@@ -133,6 +181,54 @@ const translations = {
     'premium.cta': '✉️ Send an enquiry',
     'footer.tagline': 'Party equipment rental in Vienna and Lower Austria. Simple, fast, professional.',
     'footer.wa': '💬 WhatsApp us',
+    'ps.badge': '⚡ Clean Energy · Anywhere',
+    'ps.title': 'POWER WITHOUT LIMITS',
+    'ps.desc': 'No generators, no noise, no diesel. Our Fossibot F2400 power stations deliver clean, portable energy — for any location and any occasion.',
+    'ps.card1.title': 'Speakers',
+    'ps.card1.desc': 'Active speakers & PA systems — hours of runtime, no mains needed',
+    'ps.card2.title': 'Lights & Effects',
+    'ps.card2.desc': 'Laser bar, fog machine & LEDs — anywhere, no power outlet required',
+    'ps.card3.title': 'DJ Equipment',
+    'ps.card3.desc': 'Controllers, mixers & monitors — full DJ performance outdoors',
+    'ps.card4.title': 'Filming & Content',
+    'ps.card4.desc': 'Cameras, drones & laptops — perfect for shoot days on location',
+    'ps.cta': '📅 Book now',
+    'ps.spec1': 'Output power',
+    'ps.spec2': 'Capacity',
+    'ps.spec3': '100% clean',
+    'ps.spec3.sub': 'No generator · No noise',
+    'ps.spec4': 'All device types',
+    'booking.label': 'Book directly online',
+    'booking.title': 'All equipment. Check availability.',
+    'booking.sub': 'Browse equipment, check availability and book directly — no back and forth.',
+    'pk.badge': '⚡ New — Exclusive to LOUD',
+    'pk.desc': 'Donauinsel, Prater, rooftops — 100% battery powered, no mains needed, usable anywhere.',
+    'pk.included': "What's included — everything",
+    'pk.item1.desc': '126dB · 40h battery · Weatherproof',
+    'pk.item2.desc': 'Pro light show · Plug & Play',
+    'pk.item3.desc': '2400W · Powers everything for hours',
+    'pk.item4.desc': 'Optimally positioned · Stable',
+    'pk.item5.desc': 'Garden trolley · No generator',
+    'pk.for': 'Perfect for:',
+    'rev.google': '⭐ 5.0 · 12 reviews on Google',
+    'rev.all': 'See all reviews on Google →',
+    'faq.1.q': 'Do I need technical knowledge?',
+    'faq.1.a': 'Short answer: no. Our systems are kept as simple as possible — especially the battery speakers, which just connect via Bluetooth. For more complex setups we send you a PDF guide with setup instructions and troubleshooting before pickup, so you\'re prepared for everything.',
+    'faq.2.q': 'Is there a deposit or excess?',
+    'faq.2.a': 'No deposit — you don\'t put anything down upfront. The equipment is fully insured. For normal use there are no costs whatsoever. Only in cases of gross negligence does an excess of €150 apply — far less than other providers. For just €9 you can reduce this to €0 at checkout.',
+    'faq.3.q': 'Can I book last minute?',
+    'faq.3.a': 'Yes — in theory you can book an hour in advance, as long as the equipment is available. For pickup bookings no problem at all. For deliveries with less than 24h notice we\'ll get in touch immediately and find a solution together.',
+    'faq.4.q': 'How does delivery work?',
+    'faq.4.a': 'Delivery & collection after your event costs €49 flat rate across all of Vienna. Setup & soundcheck is available from €99 on top. Book by 6pm = delivery next day guaranteed.',
+    'faq.5.q': 'Do you deliver outside Vienna?',
+    'faq.5.a': 'Yes — we deliver within 99km of the Vienna city boundary, covering all of Lower Austria. You can add the delivery surcharge directly at checkout. For longer distances just get in touch.',
+    'faq.6.q': 'Can I play my own music?',
+    'faq.6.a': 'Absolutely — almost all our speakers connect via Bluetooth, AUX or USB. Connecting a DJ controller or mixer works too — just let us know after booking which cable you need and we\'ll include it.',
+    'faq.7.q': 'What happens if something breaks?',
+    'faq.7.a': 'It happens — no drama. The equipment is insured. Important: let us know immediately so we can react quickly. Normal wear and tear has no costs — the €150 excess only applies in cases of gross negligence.',
+    'faq.8.q': 'Can I customise my package?',
+    'faq.8.a': 'Yes — at checkout you can add extra equipment directly. On our product page you can see everything we carry. If you\'re looking for something specific, send us a quick WhatsApp or email — we respond fast.',
+    'footer.contact': 'Contact',
     'chatbot.greeting': 'Hey! 👋 What kind of event are you planning?',
     'chatbot.placeholder': 'Write a message…',
     'chatbot.title': 'Party Assistant',
@@ -354,6 +450,33 @@ class Chatbot {
   }
 }
 
+/* ── HERO VIDEO — slow-mo loop between clip start and end ── */
+function initHeroVideo() {
+  const video = document.getElementById('hero-video');
+  if (!video) return;
+
+  const CLIP_START  = 3;   // seconds into the raw file
+  const CLIP_END    = 11;  // seconds into the raw file
+  const PLAY_RATE   = 0.4; // 0.4× = slow motion
+
+  function startClip() {
+    video.currentTime = CLIP_START;
+    video.playbackRate = PLAY_RATE;
+    video.play().catch(() => {}); // silently handle autoplay blocks
+  }
+
+  video.addEventListener('loadedmetadata', startClip);
+
+  video.addEventListener('timeupdate', () => {
+    if (video.currentTime >= CLIP_END) {
+      video.currentTime = CLIP_START;
+    }
+  });
+
+  // Fallback: if metadata already loaded (cached)
+  if (video.readyState >= 1) startClip();
+}
+
 /* ── INIT ── */
 document.addEventListener('DOMContentLoaded', () => {
   // Language auto-detect
@@ -361,6 +484,7 @@ document.addEventListener('DOMContentLoaded', () => {
   const browser = navigator.language?.startsWith('de') ? 'de' : 'en';
   setLang(saved || browser);
 
+  initHeroVideo();
   initFAQ();
   initHamburger();
 

@@ -200,6 +200,98 @@ nav {
   background: var(--off-white);
 }
 
+/* Text-only hero variant — no side images */
+.hero--text-only {
+  grid-template-columns: 1fr;
+}
+
+/* Video hero variant */
+.hero--video {
+  grid-template-columns: 1fr;
+  background: #0A0A0A;
+  position: relative;
+}
+.hero-video {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center;
+  z-index: 0;
+  pointer-events: none;
+  /* Cinematic color grade */
+  filter: contrast(1.15) saturate(0.82) brightness(0.9);
+}
+.hero-video-overlay {
+  position: absolute;
+  inset: 0;
+  /* Dark gradient + vignette */
+  background:
+    radial-gradient(ellipse at center, transparent 35%, rgba(0,0,0,0.65) 100%),
+    linear-gradient(to bottom, rgba(0,0,0,0.25) 0%, rgba(0,0,0,0.55) 100%);
+  z-index: 1;
+}
+/* Brand green tint */
+.hero-video-tint {
+  position: absolute;
+  inset: 0;
+  z-index: 2;
+  pointer-events: none;
+  background: rgba(124, 255, 46, 0.08);
+  mix-blend-mode: screen;
+}
+/* Film grain overlay — shifts every ~0.1s to simulate grain movement */
+.hero-video-grain {
+  position: absolute;
+  inset: 0;
+  z-index: 3;
+  pointer-events: none;
+  background-image: url('../images/grunge-wall-texture.jpg');
+  background-size: 280px 280px;
+  opacity: 0.08;
+  mix-blend-mode: overlay;
+  animation: hero-grain 0.1s steps(1) infinite;
+}
+@keyframes hero-grain {
+  0%   { background-position:   0%   0%; }
+  11%  { background-position: -12%  -8%; }
+  22%  { background-position:   7%  18%; }
+  33%  { background-position: -20%   5%; }
+  44%  { background-position:  14% -22%; }
+  55%  { background-position:  -6%  30%; }
+  66%  { background-position:  18%  -4%; }
+  77%  { background-position:  -3%  14%; }
+  88%  { background-position: -16% -18%; }
+  100% { background-position:   0%   0%; }
+}
+.hero--video .hero-center {
+  grid-column: 1;
+  position: relative;
+  z-index: 3;
+  padding: 80px 40px;
+  max-width: 900px;
+  margin: 0 auto;
+  width: 100%;
+}
+.hero--video .hero-headline {
+  color: white;
+  font-size: clamp(96px, 14vw, 180px);
+}
+.hero--video .hero-sub {
+  color: rgba(255,255,255,0.75);
+  max-width: 480px;
+  font-size: 17px;
+}
+.hero--video .hero-trust {
+  color: rgba(255,255,255,0.5);
+}
+.hero--video .hero-location-pill {
+  background: rgba(255,255,255,0.15);
+  backdrop-filter: blur(6px);
+  border: 1px solid rgba(255,255,255,0.2);
+}
+
 .hero-left {
   grid-column: 1;
   position: relative;
@@ -229,6 +321,13 @@ nav {
   position: relative;
   z-index: 2;
   text-align: center;
+}
+.hero--text-only .hero-center {
+  grid-column: 1;
+  padding: 80px 40px;
+  max-width: 900px;
+  margin: 0 auto;
+  width: 100%;
 }
 
 .hero-location-pill {
@@ -263,6 +362,13 @@ nav {
   color: var(--black);
   margin-bottom: 20px;
   animation: fadeUp 0.6s ease both;
+}
+.hero--text-only .hero-headline {
+  font-size: clamp(96px, 14vw, 180px);
+}
+.hero--text-only .hero-sub {
+  max-width: 480px;
+  font-size: 17px;
 }
 
 .hero-sub {
@@ -347,8 +453,10 @@ nav {
 .btn-dark:hover { opacity: 0.85; }
 
 .btn-book {
+  display: inline-block;
   background: var(--green);
   color: var(--black);
+  font-family: var(--font-body);
   font-weight: 700;
   font-size: 13px;
   letter-spacing: 0.04em;
@@ -358,8 +466,50 @@ nav {
   border: none;
   cursor: pointer;
   transition: background 0.2s;
+  -webkit-appearance: none;
+  appearance: none;
+  line-height: 1.4;
+  box-sizing: border-box;
 }
 .btn-book:hover { background: var(--green-dark); }
+
+/* ── BOOQABLE PRODUCT BUTTON — styled to match .btn-book ── */
+/* Hide whatever text Booqable puts in, replace with "Buchen →" via ::after */
+.bq-styled button,
+.bq-styled a {
+  display: inline-block !important;
+  background: var(--green) !important;
+  color: transparent !important;       /* hide Booqable's own label */
+  font-size: 0 !important;             /* collapse Booqable's text */
+  font-family: var(--font-body) !important;
+  font-weight: 700 !important;
+  letter-spacing: 0.04em !important;
+  padding: 10px 18px !important;
+  border-radius: 4px !important;
+  text-decoration: none !important;
+  cursor: pointer !important;
+  border: none !important;
+  white-space: nowrap !important;
+  transition: background 0.2s !important;
+  -webkit-appearance: none !important;
+  appearance: none !important;
+  line-height: 1.4 !important;
+  box-sizing: border-box !important;
+  position: relative !important;
+}
+.bq-styled button::after,
+.bq-styled a::after {
+  content: 'Buchen →';
+  font-size: 13px;
+  color: var(--black);
+  font-family: var(--font-body);
+  font-weight: 700;
+  letter-spacing: 0.04em;
+}
+.bq-styled button:hover,
+.bq-styled a:hover {
+  background: var(--green-dark) !important;
+}
 
 /* ── TRUST BAR ── */
 .trust-bar {
@@ -1217,18 +1367,7 @@ footer {
   opacity: 0.14;
   mix-blend-mode: multiply;
 }
-.texture::before {
-  content: '';
-  position: absolute;
-  inset: 0;
-  pointer-events: none;
-  z-index: 1;
-  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 700 700'%3E%3Cg fill='none' stroke='%237CFF2E' stroke-width='26'%3E%3Ccircle cx='700' cy='700' r='670'/%3E%3Ccircle cx='700' cy='700' r='600'/%3E%3Ccircle cx='700' cy='700' r='530'/%3E%3Ccircle cx='700' cy='700' r='460'/%3E%3Ccircle cx='700' cy='700' r='390'/%3E%3Ccircle cx='700' cy='700' r='320'/%3E%3Ccircle cx='700' cy='700' r='250'/%3E%3Ccircle cx='700' cy='700' r='180'/%3E%3Ccircle cx='700' cy='700' r='110'/%3E%3Ccircle cx='700' cy='700' r='40'/%3E%3C/g%3E%3C/svg%3E");
-  background-size: 700px 700px;
-  background-repeat: no-repeat;
-  background-position: bottom right;
-  opacity: 0.12;
-}
+
 .texture > * { position: relative; z-index: 2; }
 
 /* ── QUARTER CIRCLE brand accent ── */
@@ -1241,7 +1380,7 @@ footer {
   overflow: hidden;
   z-index: 0;
   pointer-events: none;
-  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 140 140'%3E%3CclipPath id='q'%3E%3Crect width='140' height='140'/%3E%3C/clipPath%3E%3Cg clip-path='url(%23q)'%3E%3Ccircle cx='140' cy='140' r='140' fill='%230A0A0A'/%3E%3Ccircle cx='140' cy='140' r='126' fill='%237CFF2E'/%3E%3Ccircle cx='140' cy='140' r='112' fill='%230A0A0A'/%3E%3Ccircle cx='140' cy='140' r='98' fill='%237CFF2E'/%3E%3Ccircle cx='140' cy='140' r='84' fill='%230A0A0A'/%3E%3Ccircle cx='140' cy='140' r='70' fill='%237CFF2E'/%3E%3Ccircle cx='140' cy='140' r='56' fill='%230A0A0A'/%3E%3Ccircle cx='140' cy='140' r='42' fill='%237CFF2E'/%3E%3Ccircle cx='140' cy='140' r='28' fill='%230A0A0A'/%3E%3Ccircle cx='140' cy='140' r='14' fill='%237CFF2E'/%3E%3C/g%3E%3C/svg%3E");
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 140 140'%3E%3CclipPath id='q'%3E%3Crect width='140' height='140'/%3E%3C/clipPath%3E%3Cg clip-path='url(%23q)'%3E%3Ccircle cx='140' cy='140' r='119' fill='none' stroke='%237CFF2E' stroke-width='14'/%3E%3Ccircle cx='140' cy='140' r='91' fill='none' stroke='%237CFF2E' stroke-width='14'/%3E%3Ccircle cx='140' cy='140' r='63' fill='none' stroke='%237CFF2E' stroke-width='14'/%3E%3Ccircle cx='140' cy='140' r='35' fill='none' stroke='%237CFF2E' stroke-width='14'/%3E%3Ccircle cx='140' cy='140' r='14' fill='%237CFF2E'/%3E%3C/g%3E%3C/svg%3E");
   background-size: 140px 140px;
   background-repeat: no-repeat;
   background-position: bottom right;
@@ -1495,6 +1634,7 @@ footer {
   .hero { grid-template-columns: 1fr; }
   .hero-left, .hero-right { display: none; }
   .hero-center { padding: 48px 24px 60px; min-height: calc(100vh - 64px); }
+  .hero--text-only .hero-headline { font-size: clamp(72px, 18vw, 120px); }
 
   section { padding: 60px 20px; }
 
