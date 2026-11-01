@@ -1421,7 +1421,7 @@ footer {
 .chatbot-window {
   position: fixed;
   bottom: 24px;
-  right: 24px;
+  right: 90px;
   width: 360px;
   height: 480px;
   background: var(--off-white);
