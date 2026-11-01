@@ -430,29 +430,50 @@
 </section>
 
 <!-- ══════════════════════════
-     BOOQABLE BOOKING EMBED
+     LICHT & EFFEKTE
      ══════════════════════════ -->
-<section class="booking-section texture" id="booking">
-  <div class="booking-inner">
-    <div class="booking-header">
-      <div class="section-label" data-i18n="booking.label">Direkt online buchen</div>
-      <h2 class="section-title" data-i18n="booking.title">Alle Geräte. Verfügbarkeit prüfen.</h2>
-      <p class="section-sub" data-i18n="booking.sub">Wähle dein Equipment, prüfe die Verfügbarkeit und buche direkt — ohne Umwege.</p>
+<section id="licht-effekte" style="background:#0A0A0A; padding:80px 48px;">
+  <div class="section-header" style="margin-bottom:40px;">
+    <div class="section-label" style="color:var(--green);">Einfach dazubuchen</div>
+    <h2 class="section-title" style="color:white;">Licht &amp; Effekte</h2>
+    <p class="section-sub" style="color:rgba(255,255,255,0.5);">Mehr Atmosphäre — ganz einfach. Laser und Nebel machen aus jeder Party ein Erlebnis.</p>
+  </div>
+  <div style="display:grid; grid-template-columns:repeat(2,1fr); gap:20px; max-width:800px; margin:0 auto;">
+
+    <!-- Laserbar FX Pro -->
+    <div style="background:#161616; border-radius:8px; overflow:hidden; border:1px solid #1E1E1E;">
+      <div style="height:200px; background:linear-gradient(135deg,#0a0a1a 0%,#1a0040 100%); display:flex; align-items:center; justify-content:center; position:relative; overflow:hidden;">
+        <img src="https://partyloud.at/cdn/shop/files/laserbar-fx-pro.jpg" alt="Laserbar FX Pro"
+          style="width:100%; height:100%; object-fit:cover; position:absolute; inset:0;" onerror="this.style.display='none'">
+        <span style="font-size:52px; position:relative; z-index:1; filter:drop-shadow(0 0 16px rgba(160,0,255,0.8));">✦</span>
+      </div>
+      <div style="padding:20px;">
+        <div style="font-family:'Barlow Condensed',sans-serif; font-weight:700; font-size:20px; color:white; text-transform:uppercase; letter-spacing:0.02em; margin-bottom:6px;">Laserbar FX Pro</div>
+        <div style="font-size:13px; color:rgba(255,255,255,0.4); margin-bottom:16px; line-height:1.5;">RGB-Laser · Disco-Effekte · Musik-Sync</div>
+        <div style="display:flex; justify-content:space-between; align-items:center;">
+          <span style="font-family:'Barlow Condensed',sans-serif; font-weight:900; font-size:22px; color:var(--green);">ab €25<span style="font-size:13px; font-weight:400; color:rgba(255,255,255,0.35);">/Tag</span></span>
+          <a href="https://partyloud.at/products/laserbar-fx-pro" target="_blank" rel="noopener" class="btn-book" style="font-size:12px; padding:8px 16px;">Buchen →</a>
+        </div>
+      </div>
     </div>
 
-    <!--
-      BOOQABLE EMBED — replace the placeholder below:
-      1. Booqable Dashboard → Settings → Online Store → Share/Embed
-      2. Copy the snippet (looks like the code below) and paste it here
-      3. Delete the .booqable-container placeholder div
-
-      <div data-booqable="shop" data-company-slug="partyloud"></div>
-      <script src="https://shop.booqable.com/embed.js"></script>
-    -->
-    <div class="booqable-container">
-      <div class="booqable-datepicker"></div>
-      <div class="booqable-product-list"></div>
+    <!-- Nebelmaschine -->
+    <div style="background:#161616; border-radius:8px; overflow:hidden; border:1px solid #1E1E1E;">
+      <div style="height:200px; background:linear-gradient(135deg,#0d0d0d 0%,#1a1a2a 100%); display:flex; align-items:center; justify-content:center; position:relative; overflow:hidden;">
+        <img src="https://partyloud.at/cdn/shop/files/nebelmaschine.jpg" alt="Nebelmaschine"
+          style="width:100%; height:100%; object-fit:cover; position:absolute; inset:0;" onerror="this.style.display='none'">
+        <span style="font-size:52px; position:relative; z-index:1; filter:drop-shadow(0 0 16px rgba(180,220,255,0.6));">🌫️</span>
+      </div>
+      <div style="padding:20px;">
+        <div style="font-family:'Barlow Condensed',sans-serif; font-weight:700; font-size:20px; color:white; text-transform:uppercase; letter-spacing:0.02em; margin-bottom:6px;">Nebelmaschine</div>
+        <div style="font-size:13px; color:rgba(255,255,255,0.4); margin-bottom:16px; line-height:1.5;">800W · Schnellaufheizung · inkl. Fluid</div>
+        <div style="display:flex; justify-content:space-between; align-items:center;">
+          <span style="font-family:'Barlow Condensed',sans-serif; font-weight:900; font-size:22px; color:var(--green);">ab €20<span style="font-size:13px; font-weight:400; color:rgba(255,255,255,0.35);">/Tag</span></span>
+          <a href="https://partyloud.at/products/nebelmaschine" target="_blank" rel="noopener" class="btn-book" style="font-size:12px; padding:8px 16px;">Buchen →</a>
+        </div>
+      </div>
     </div>
+
   </div>
 </section>
 
@@ -980,6 +1001,16 @@
     </a>
   </div>
 </div>
+
+
+<!-- ══════════════════════════
+     CATALOGUE STRIP
+     ══════════════════════════ -->
+<section id="booking" style="background:var(--black); border-top:1px solid #1E1E1E; padding:40px 24px; text-align:center;">
+  <p style="color:rgba(255,255,255,0.4); font-size:13px; margin:0 0 8px; letter-spacing:0.08em; text-transform:uppercase;">Nichts Passendes gefunden?</p>
+  <p style="color:white; font-family:'Barlow Condensed',sans-serif; font-weight:700; font-size:clamp(22px,3vw,32px); text-transform:uppercase; letter-spacing:-0.5px; margin:0 0 20px;">Durchsuche unser gesamtes Sortiment</p>
+  <a href="https://partyloud.at/collections/all" target="_blank" rel="noopener" class="btn-book" style="font-size:14px; padding:12px 28px;">Alle Geräte ansehen →</a>
+</section>
 
 
 <!-- ══════════════════════════
