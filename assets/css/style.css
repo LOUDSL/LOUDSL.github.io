@@ -1400,7 +1400,7 @@ footer {
 .chatbot-trigger {
   position: fixed;
   bottom: 24px;
-  right: 24px;
+  right: 90px;
   width: 56px;
   height: 56px;
   background: var(--green);
@@ -1672,7 +1672,7 @@ footer {
     border-radius: 0;
     z-index: 600;
   }
-  .chatbot-trigger { bottom: 20px; right: 20px; }
+  .chatbot-trigger { bottom: 20px; right: 84px; }
 }
 
 @media (max-width: 480px) {
