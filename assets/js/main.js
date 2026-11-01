@@ -116,7 +116,7 @@ const translations = {
     'footer.contact': 'Kontakt',
     'chatbot.greeting': 'Hey! 👋 Welche Art von Event planst du?',
     'chatbot.placeholder': 'Schreib eine Nachricht…',
-    'chatbot.title': 'Woofer 🐾',
+    'chatbot.title': 'Bassi 🎵',
     'chatbot.subtitle': 'Online · Antwortet sofort',
     'chatbot.error': 'Ups, da ist was schiefgegangen. Schreib uns direkt auf WhatsApp! 💬',
   },
@@ -231,7 +231,7 @@ const translations = {
     'footer.contact': 'Contact',
     'chatbot.greeting': 'Hey! 👋 What kind of event are you planning?',
     'chatbot.placeholder': 'Write a message…',
-    'chatbot.title': 'Woofer 🐾',
+    'chatbot.title': 'Bassi 🎵',
     'chatbot.subtitle': 'Online · Replies instantly',
     'chatbot.error': 'Something went wrong. Message us directly on WhatsApp! 💬',
   }
