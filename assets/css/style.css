@@ -1711,8 +1711,10 @@ footer {
 
   .hero { grid-template-columns: 1fr; }
   .hero-left, .hero-right { display: none; }
-  .hero-center { padding: 48px 24px 60px; min-height: calc(100vh - 64px); }
+  .hero-center { padding: 48px 24px 60px; min-height: calc(100vh - 64px); align-items: center; text-align: center; }
+  .hero--video .hero-headline { text-align: center; width: 100%; }
   .hero--text-only .hero-headline { font-size: clamp(72px, 18vw, 120px); }
+  #powerstation .fossibot-bg { object-fit: contain !important; object-position: center center !important; }
 
   section { padding: 60px 20px; }
 
