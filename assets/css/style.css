@@ -384,6 +384,7 @@ nav {
   line-height: 1.5;
   max-width: 320px;
   margin-bottom: 32px;
+  text-align: center;
   animation: fadeUp 0.6s 0.1s ease both;
 }
 
@@ -1714,7 +1715,8 @@ footer {
   .hero-center { padding: 48px 24px 60px; min-height: calc(100vh - 64px); align-items: center; text-align: center; }
   .hero--video .hero-headline { text-align: center; width: 100%; }
   .hero-sub { text-align: center; max-width: 100%; }
-  .hero-trust { text-align: center; }
+  .hero--video .hero-sub { text-align: center; max-width: 100%; }
+  .hero-trust { text-align: center; width: 100%; }
   .hero-location-pill { text-align: center; }
   .hero--text-only .hero-headline { font-size: clamp(72px, 18vw, 120px); }
   #powerstation .fossibot-bg { object-fit: contain !important; object-position: center center !important; }
