@@ -149,8 +149,8 @@
   <div class="trust-item">
     <div class="trust-icon">📦</div>
     <div class="trust-text">
-      <strong data-i18n="trust.2.title">Lieferung ab €49</strong>
-      <span data-i18n="trust.2.sub">Aufbau &amp; Soundcheck ab €99</span>
+      <strong data-i18n="trust.2.title">Lieferung €79</strong>
+      <span data-i18n="trust.2.sub">Aufbau &amp; Equipment Test €99 inkl.</span>
     </div>
   </div>
   <div class="trust-item">
@@ -219,7 +219,7 @@
       <div class="step-num">02</div>
       <div class="step-icon">🚐</div>
       <h3 data-i18n="how.2.title">Abholen oder liefern lassen</h3>
-      <p data-i18n="how.2.body">Kostenlose Abholung zentral in Wien — oder wir liefern zu dir ab €49. Aufbau &amp; Soundcheck gibt's on top ab €99.</p>
+      <p data-i18n="how.2.body">Kostenlose Abholung zentral in Wien — oder wir liefern zu dir um €79. Aufbau &amp; Equipment Test gibt's on top um €99 inkl.</p>
     </div>
     <div class="step">
       <div class="step-num">03</div>
@@ -415,93 +415,14 @@
     <h2 class="section-title" style="color:white;">Licht &amp; Effekte</h2>
     <p class="section-sub" style="color:rgba(255,255,255,0.5);">Laser, Nebel &amp; Mikrofon — direkt zum Paket dazubuchen.</p>
   </div>
-  <div class="addons-grid" style="display:grid; grid-template-columns:repeat(3,1fr); gap:20px; max-width:1100px; margin:0 auto;">
+  <!-- Hidden Booqable product divs (used by packages add-ons above) -->
+  <div class="booqable-product" id="bq-laserbar" data-id="eurolite-laserbar-fx-pro" style="position:fixed;top:-9999px;left:-9999px;width:120px;height:44px;"></div>
+  <div class="booqable-product" id="bq-nebel" data-id="nebelmaschine-inkl-250ml-flussigkeit" style="position:fixed;top:-9999px;left:-9999px;width:120px;height:44px;"></div>
+  <div class="booqable-product" id="bq-mikro" data-id="jbl-drahtlos-2er-mikro-set" style="position:fixed;top:-9999px;left:-9999px;width:120px;height:44px;"></div>
 
-    <!-- Laserbar FX Pro -->
-    <div style="background:#161616; border-radius:8px; overflow:hidden; border:1px solid #1E1E1E;">
-      <div style="height:200px; background:#0a0a1a; display:flex; align-items:center; justify-content:center; position:relative; overflow:hidden;">
-        <img src="https://thumbs.static-thomann.de/thumb/padthumb600x600/pics/prod/394163.jpg" alt="Eurolite Laserbar FX Pro"
-          style="width:100%; height:100%; object-fit:contain; position:absolute; inset:0; padding:16px; box-sizing:border-box;" onerror="this.style.display='none'">
-      </div>
-      <div style="padding:20px;">
-        <div style="font-family:'Barlow Condensed',sans-serif; font-weight:700; font-size:20px; color:white; text-transform:uppercase; letter-spacing:0.02em; margin-bottom:6px;">Laserbar FX Pro</div>
-        <div style="font-size:13px; color:rgba(255,255,255,0.4); margin-bottom:16px; line-height:1.5;">RGB-Laser · Disco-Effekte · Musik-Sync</div>
-        <div style="display:flex; justify-content:space-between; align-items:center;">
-          <span style="font-family:'Barlow Condensed',sans-serif; font-weight:900; font-size:22px; color:var(--green);">€39<span style="font-size:13px; font-weight:400; color:rgba(255,255,255,0.35);">/Tag</span></span>
-          <div class="booqable-product" id="bq-laserbar" data-id="eurolite-laserbar-fx-pro" style="position:fixed;top:-9999px;left:-9999px;width:120px;height:44px;"></div>
-          <button class="btn-book" style="font-size:12px; padding:8px 16px;" onclick="var b=document.querySelector('#bq-laserbar button,#bq-laserbar a');if(b)b.dispatchEvent(new MouseEvent('click',{bubbles:true,cancelable:true,view:window}));">In den Warenkorb →</button>
-        </div>
-      </div>
-    </div>
-
-    <!-- Nebelmaschine -->
-    <div style="background:#161616; border-radius:8px; overflow:hidden; border:1px solid #1E1E1E;">
-      <div style="height:200px; background:#0d0d0d; display:flex; align-items:center; justify-content:center; position:relative; overflow:hidden;">
-        <img src="https://thumbs.static-thomann.de/thumb/padthumb600x600/pics/prod/537722.jpg" alt="Eurolite N-19 Nebelmaschine"
-          style="width:100%; height:100%; object-fit:contain; position:absolute; inset:0; padding:16px; box-sizing:border-box;" onerror="this.style.display='none'">
-      </div>
-      <div style="padding:20px;">
-        <div style="font-family:'Barlow Condensed',sans-serif; font-weight:700; font-size:20px; color:white; text-transform:uppercase; letter-spacing:0.02em; margin-bottom:6px;">Nebelmaschine N-19</div>
-        <div style="font-size:13px; color:rgba(255,255,255,0.4); margin-bottom:16px; line-height:1.5;">700W · Schnellaufheizung · inkl. Flüssigkeit</div>
-        <div style="display:flex; justify-content:space-between; align-items:center;">
-          <span style="font-family:'Barlow Condensed',sans-serif; font-weight:900; font-size:22px; color:var(--green);">€19<span style="font-size:13px; font-weight:400; color:rgba(255,255,255,0.35);">/Tag</span></span>
-          <div class="booqable-product" id="bq-nebel" data-id="nebelmaschine-inkl-250ml-flussigkeit" style="position:fixed;top:-9999px;left:-9999px;width:120px;height:44px;"></div>
-          <button class="btn-book" style="font-size:12px; padding:8px 16px;" onclick="var b=document.querySelector('#bq-nebel button,#bq-nebel a');if(b)b.dispatchEvent(new MouseEvent('click',{bubbles:true,cancelable:true,view:window}));">In den Warenkorb →</button>
-        </div>
-      </div>
-    </div>
-
-    <!-- Chauvet DJ Gigbar Move -->
-    <div style="background:#161616; border-radius:8px; overflow:hidden; border:1px solid #1E1E1E;">
-      <div style="height:200px; background:#0a0a0d; display:flex; align-items:center; justify-content:center; position:relative; overflow:hidden;">
-        <img src="https://thumbs.static-thomann.de/thumb/padthumb600x600/pics/prod/418984.jpg" alt="Chauvet DJ Gigbar Move"
-          style="width:100%; height:100%; object-fit:contain; position:absolute; inset:0; padding:16px; box-sizing:border-box;" onerror="this.style.display='none'">
-      </div>
-      <div style="padding:20px;">
-        <div style="font-family:'Barlow Condensed',sans-serif; font-weight:700; font-size:20px; color:white; text-transform:uppercase; letter-spacing:0.02em; margin-bottom:6px;">Gigbar Move</div>
-        <div style="font-size:13px; color:rgba(255,255,255,0.4); margin-bottom:16px; line-height:1.5;">5-in-1 Lichtanlage · Moving Head · Laser · Strobe</div>
-        <div style="display:flex; justify-content:space-between; align-items:center;">
-          <span style="font-family:'Barlow Condensed',sans-serif; font-weight:900; font-size:22px; color:var(--green);">€49<span style="font-size:13px; font-weight:400; color:rgba(255,255,255,0.35);">/Tag</span></span>
-          <div class="booqable-product" id="bq-gigbar" data-id="chauvet-dj-gigbar-move" style="position:fixed;top:-9999px;left:-9999px;width:120px;height:44px;"></div>
-          <button class="btn-book" style="font-size:12px; padding:8px 16px;" onclick="var b=document.querySelector('#bq-gigbar button,#bq-gigbar a');if(b)b.dispatchEvent(new MouseEvent('click',{bubbles:true,cancelable:true,view:window}));">In den Warenkorb →</button>
-        </div>
-      </div>
-    </div>
-
-    <!-- Haze 1D -->
-    <div style="background:#161616; border-radius:8px; overflow:hidden; border:1px solid #1E1E1E;">
-      <div style="height:200px; background:#0d0d0a; display:flex; align-items:center; justify-content:center; position:relative; overflow:hidden;">
-        <img src="https://thumbs.static-thomann.de/thumb/padthumb600x600/pics/prod/419014.jpg" alt="Chauvet DJ Haze 1D"
-          style="width:100%; height:100%; object-fit:contain; position:absolute; inset:0; padding:16px; box-sizing:border-box;" onerror="this.style.display='none'">
-      </div>
-      <div style="padding:20px;">
-        <div style="font-family:'Barlow Condensed',sans-serif; font-weight:700; font-size:20px; color:white; text-transform:uppercase; letter-spacing:0.02em; margin-bottom:6px;">Haze 1D</div>
-        <div style="font-size:13px; color:rgba(255,255,255,0.4); margin-bottom:16px; line-height:1.5;">Hazer · feiner Dunst · Licht-Strahlen sichtbar machen</div>
-        <div style="display:flex; justify-content:space-between; align-items:center;">
-          <span style="font-family:'Barlow Condensed',sans-serif; font-weight:900; font-size:22px; color:var(--green);">€29<span style="font-size:13px; font-weight:400; color:rgba(255,255,255,0.35);">/Tag</span></span>
-          <div class="booqable-product" id="bq-haze" data-id="chauvet-dj-haze-1d" style="position:fixed;top:-9999px;left:-9999px;width:120px;height:44px;"></div>
-          <button class="btn-book" style="font-size:12px; padding:8px 16px;" onclick="var b=document.querySelector('#bq-haze button,#bq-haze a');if(b)b.dispatchEvent(new MouseEvent('click',{bubbles:true,cancelable:true,view:window}));">In den Warenkorb →</button>
-        </div>
-      </div>
-    </div>
-
-    <!-- Fobbles Cyclone 400 -->
-    <div style="background:#161616; border-radius:8px; overflow:hidden; border:1px solid #1E1E1E;">
-      <div style="height:200px; background:#0a0d0a; display:flex; align-items:center; justify-content:center; position:relative; overflow:hidden;">
-        <img src="https://thumbs.static-thomann.de/thumb/padthumb600x600/pics/prod/560044.jpg" alt="Fobbles Cyclone 400"
-          style="width:100%; height:100%; object-fit:contain; position:absolute; inset:0; padding:16px; box-sizing:border-box;" onerror="this.style.display='none'">
-      </div>
-      <div style="padding:20px;">
-        <div style="font-family:'Barlow Condensed',sans-serif; font-weight:700; font-size:20px; color:white; text-transform:uppercase; letter-spacing:0.02em; margin-bottom:6px;">Fobbles Cyclone 400</div>
-        <div style="font-size:13px; color:rgba(255,255,255,0.4); margin-bottom:16px; line-height:1.5;">Seifenblasenmaschine · 400W · Dauerfeuer</div>
-        <div style="display:flex; justify-content:space-between; align-items:center;">
-          <span style="font-family:'Barlow Condensed',sans-serif; font-weight:900; font-size:22px; color:var(--green);">€19<span style="font-size:13px; font-weight:400; color:rgba(255,255,255,0.35);">/Tag</span></span>
-          <div class="booqable-product" id="bq-bubbles" data-id="fobbles-cyclone-400" style="position:fixed;top:-9999px;left:-9999px;width:120px;height:44px;"></div>
-          <button class="btn-book" style="font-size:12px; padding:8px 16px;" onclick="var b=document.querySelector('#bq-bubbles button,#bq-bubbles a');if(b)b.dispatchEvent(new MouseEvent('click',{bubbles:true,cancelable:true,view:window}));">In den Warenkorb →</button>
-        </div>
-      </div>
-    </div>
-
+  <div style="margin-top:40px; text-align:center;">
+    <a href="https://partyloud.at/collections/licht-effekte" target="_blank" rel="noopener" class="btn-primary" style="font-size:15px; padding:14px 32px;">Alle Licht &amp; Effekte ansehen →</a>
+    <p style="margin-top:16px; font-size:13px; color:rgba(255,255,255,0.35);">Laser · Nebelmaschinen · Moving Heads · Hazer · Seifenblasen</p>
   </div>
   </div>
 </section>
@@ -786,19 +707,19 @@
     <h2 class="section-title" data-i18n="del.title">Wir kommen<br>zu dir.</h2>
     <div style="display:flex; gap:24px; margin:24px 0 8px; flex-wrap:wrap;">
       <div>
-        <div class="delivery-price">ab €49</div>
+        <div class="delivery-price">€79</div>
         <div class="delivery-price-sub">Lieferung &amp; Abholung · Wien Flatrate</div>
       </div>
       <div style="width:1px; background:#222; flex-shrink:0;"></div>
       <div>
-        <div class="delivery-price">ab €99</div>
-        <div class="delivery-price-sub">Aufbau &amp; Soundcheck · Vollservice</div>
+        <div class="delivery-price">€99 inkl.</div>
+        <div class="delivery-price-sub">Aufbau &amp; Equipment Test · Vollservice</div>
       </div>
     </div>
     <ul class="delivery-features">
-      <li><span class="df-icon">✓</span> <span data-i18n="del.f1">Wien — €49 Flatrate, alle Bezirke</span></li>
+      <li><span class="df-icon">✓</span> <span data-i18n="del.f1">Wien — €79 Flatrate, alle Bezirke</span></li>
       <li><span class="df-icon">✓</span> <span data-i18n="del.f2">Niederösterreich — Preis nach Entfernung</span></li>
-      <li><span class="df-icon">✓</span> <span data-i18n="del.f3">Aufbau &amp; Soundcheck auf Wunsch ab €99</span></li>
+      <li><span class="df-icon">✓</span> <span data-i18n="del.f3">Aufbau &amp; Equipment Test auf Wunsch €99 inkl.</span></li>
       <li><span class="df-icon">✓</span> <span data-i18n="del.f4">Buchung bis 18:00 Uhr = Lieferung nächsten Tag</span></li>
       <li><span class="df-icon">✓</span> <span data-i18n="del.f5">Abholung nach dem Event inklusive</span></li>
     </ul>
@@ -812,7 +733,7 @@
         <div style="background:#1A1A1A; border:1px solid #2A2A2A; border-radius:8px; padding:14px 16px; text-align:left;">
           <div style="font-size:11px; color:rgba(255,255,255,0.35); margin-bottom:4px; text-transform:uppercase; letter-spacing:0.05em;">Wien</div>
           <div style="font-size:14px; font-weight:600; color:white;">Alle 23 Bezirke</div>
-          <div style="font-size:12px; color:var(--green); margin-top:4px;">€49 Flatrate</div>
+          <div style="font-size:12px; color:var(--green); margin-top:4px;">€79 Flatrate</div>
         </div>
         <div style="background:#1A1A1A; border:1px solid #2A2A2A; border-radius:8px; padding:14px 16px; text-align:left;">
           <div style="font-size:11px; color:rgba(255,255,255,0.35); margin-bottom:4px; text-transform:uppercase; letter-spacing:0.05em;">Niederösterreich</div>
@@ -982,7 +903,7 @@
 
     <div class="faq-item">
       <div class="faq-q"><span data-i18n="faq.4.q">Wie funktioniert die Lieferung?</span> <span class="faq-toggle">+</span></div>
-      <div class="faq-a" data-i18n="faq.4.a">Lieferung &amp; Abholung nach dem Event kostet €49 Flatrate in ganz Wien. Aufbau &amp; Soundcheck gibt's ab €99 on top. Buchung bis 18:00 Uhr = Lieferung am nächsten Tag garantiert.</div>
+      <div class="faq-a" data-i18n="faq.4.a">Lieferung &amp; Abholung nach dem Event kostet €79 Flatrate in ganz Wien. Aufbau &amp; Equipment Test gibt's um €99 inkl. on top. Buchung bis 18:00 Uhr = Lieferung am nächsten Tag garantiert.</div>
     </div>
 
     <div class="faq-item">
@@ -1035,10 +956,13 @@
 <!-- ══════════════════════════
      CATALOGUE STRIP
      ══════════════════════════ -->
-<section id="booking" style="background:var(--black); border-top:1px solid #1E1E1E; padding:40px 24px; text-align:center;">
-  <p style="color:rgba(255,255,255,0.4); font-size:13px; margin:0 0 8px; letter-spacing:0.08em; text-transform:uppercase;">Nichts Passendes gefunden?</p>
-  <p style="color:white; font-family:'Barlow Condensed',sans-serif; font-weight:700; font-size:clamp(22px,3vw,32px); text-transform:uppercase; letter-spacing:-0.5px; margin:0 0 20px;">Durchsuche unser gesamtes Sortiment</p>
-  <a href="https://partyloud.at/collections/all" target="_blank" rel="noopener" class="btn-book" style="font-size:14px; padding:12px 28px;">Alle Geräte ansehen →</a>
+<section id="booking" style="background:#0D0D0D; border-top:1px solid #1E1E1E; border-bottom:1px solid #1E1E1E; padding:64px 24px; text-align:center;">
+  <div style="max-width:600px; margin:0 auto;">
+    <div style="font-family:'Barlow Condensed',sans-serif; font-weight:700; font-size:11px; color:var(--green); letter-spacing:0.15em; text-transform:uppercase; margin-bottom:16px;">Nicht fündig geworden?</div>
+    <h2 style="font-family:'Barlow Condensed',sans-serif; font-weight:900; font-size:clamp(28px,4vw,44px); text-transform:uppercase; letter-spacing:-0.5px; color:white; margin:0 0 12px; line-height:1.1;">Durch unseren Katalog<br>Equipment suchen</h2>
+    <p style="color:rgba(255,255,255,0.4); font-size:15px; margin:0 0 28px; line-height:1.6;">Lautsprecher, Licht, Mikrofone &amp; mehr — alles direkt online buchbar.</p>
+    <a href="https://partyloud.at/collections/all" target="_blank" rel="noopener" class="btn-primary" style="font-size:15px; padding:14px 32px;">Gesamten Katalog ansehen →</a>
+  </div>
 </section>
 
 
