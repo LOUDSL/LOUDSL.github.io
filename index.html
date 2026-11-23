@@ -384,10 +384,10 @@
 <section id="licht-effekte" style="background:#0A0A0A; padding:80px 48px;">
   <div class="section-header" style="margin-bottom:40px;">
     <div class="section-label" style="color:var(--green);">Einfach dazubuchen</div>
-    <h2 class="section-title" style="color:white;">Licht &amp; Effekte</h2>
-    <p class="section-sub" style="color:rgba(255,255,255,0.5);">Mehr Atmosphäre — ganz einfach. Laser und Nebel machen aus jeder Party ein Erlebnis.</p>
+    <h2 class="section-title" style="color:white;">Add-ons</h2>
+    <p class="section-sub" style="color:rgba(255,255,255,0.5);">Laser, Nebel &amp; Mikrofon — direkt zum Paket dazubuchen.</p>
   </div>
-  <div style="display:grid; grid-template-columns:repeat(2,1fr); gap:20px; max-width:800px; margin:0 auto;">
+  <div class="addons-grid" style="display:grid; grid-template-columns:repeat(3,1fr); gap:20px; max-width:1100px; margin:0 auto;">
 
     <!-- Laserbar FX Pro -->
     <div style="background:#161616; border-radius:8px; overflow:hidden; border:1px solid #1E1E1E;">
@@ -413,12 +413,29 @@
           style="width:100%; height:100%; object-fit:contain; position:absolute; inset:0; padding:16px; box-sizing:border-box;" onerror="this.style.display='none'">
       </div>
       <div style="padding:20px;">
-        <div style="font-family:'Barlow Condensed',sans-serif; font-weight:700; font-size:20px; color:white; text-transform:uppercase; letter-spacing:0.02em; margin-bottom:6px;">Eurolite N-19</div>
+        <div style="font-family:'Barlow Condensed',sans-serif; font-weight:700; font-size:20px; color:white; text-transform:uppercase; letter-spacing:0.02em; margin-bottom:6px;">Nebelmaschine N-19</div>
         <div style="font-size:13px; color:rgba(255,255,255,0.4); margin-bottom:16px; line-height:1.5;">700W · Schnellaufheizung · inkl. Flüssigkeit</div>
         <div style="display:flex; justify-content:space-between; align-items:center;">
           <span style="font-family:'Barlow Condensed',sans-serif; font-weight:900; font-size:22px; color:var(--green);">€19<span style="font-size:13px; font-weight:400; color:rgba(255,255,255,0.35);">/Tag</span></span>
           <div class="booqable-product" id="bq-nebel" data-id="nebelmaschine-inkl-250ml-flussigkeit" style="position:fixed;top:-9999px;left:-9999px;width:120px;height:44px;"></div>
           <button class="btn-book" style="font-size:12px; padding:8px 16px;" onclick="var b=document.querySelector('#bq-nebel button,#bq-nebel a');if(b)b.dispatchEvent(new MouseEvent('click',{bubbles:true,cancelable:true,view:window}));">In den Warenkorb →</button>
+        </div>
+      </div>
+    </div>
+
+    <!-- Funkmikrofon 2er Set -->
+    <div style="background:#161616; border-radius:8px; overflow:hidden; border:1px solid #1E1E1E;">
+      <div style="height:200px; background:#0d0a0d; display:flex; align-items:center; justify-content:center; position:relative; overflow:hidden;">
+        <img src="https://thumbs.static-thomann.de/thumb/padthumb600x600/pics/prod/508934.jpg" alt="Funkmikrofon 2er Set"
+          style="width:100%; height:100%; object-fit:contain; position:absolute; inset:0; padding:16px; box-sizing:border-box;" onerror="this.style.display='none'">
+      </div>
+      <div style="padding:20px;">
+        <div style="font-family:'Barlow Condensed',sans-serif; font-weight:700; font-size:20px; color:white; text-transform:uppercase; letter-spacing:0.02em; margin-bottom:6px;">Funkmikrofon 2er Set</div>
+        <div style="font-size:13px; color:rgba(255,255,255,0.4); margin-bottom:16px; line-height:1.5;">2× kabellos · Plug &amp; Play · inkl. Empfänger</div>
+        <div style="display:flex; justify-content:space-between; align-items:center;">
+          <span style="font-family:'Barlow Condensed',sans-serif; font-weight:900; font-size:22px; color:var(--green);">€15<span style="font-size:13px; font-weight:400; color:rgba(255,255,255,0.35);">/Tag</span></span>
+          <div class="booqable-product" id="bq-mikro" data-id="funkmikrofon-2er-set" style="position:fixed;top:-9999px;left:-9999px;width:120px;height:44px;"></div>
+          <button class="btn-book" style="font-size:12px; padding:8px 16px;" onclick="var b=document.querySelector('#bq-mikro button,#bq-mikro a');if(b)b.dispatchEvent(new MouseEvent('click',{bubbles:true,cancelable:true,view:window}));">In den Warenkorb →</button>
         </div>
       </div>
     </div>
