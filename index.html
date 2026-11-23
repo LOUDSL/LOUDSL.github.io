@@ -306,34 +306,54 @@
     </div>
 
     <!-- ADD-ONS -->
-    <a href="https://partyloud.at/collections/eventpakete" class="package-card" target="_blank" rel="noopener">
-      <div class="package-img" style="background:#111; flex-direction:column; gap:12px;">
-        <div class="quarter-circle"><div class="quarter-circle-inner"></div></div>
-        <img src="https://images.booqablecdn.com/uploads/30a240e4a6318711ab69a343e822dee5/photo/photo/61f93336-7d48-44da-8b38-1ad30e853172/1720533540-991846278218258-0002-5408/eurolite-led-kls-laser-bar-pro-fx-light-set_1_LIG0013786-000.jpg"
-          alt="Add-ons — Laserbar, Nebelmaschine" style="height:120px;" loading="lazy">
-        <div style="display:flex; gap:8px; justify-content:center; position:relative; z-index:1;">
-          <span style="background:#1E1E1E; border:1px solid #333; color:rgba(255,255,255,0.6); font-size:11px; padding:4px 10px; border-radius:3px;">+ Laserbar €25</span>
-          <span style="background:#1E1E1E; border:1px solid #333; color:rgba(255,255,255,0.6); font-size:11px; padding:4px 10px; border-radius:3px;">+ Nebel €15</span>
-        </div>
-      </div>
-      <div class="package-body">
+    <div class="package-card" style="display:flex; flex-direction:column;">
+      <div class="package-body" style="flex:1; display:flex; flex-direction:column;">
         <div class="package-name">Add-ons</div>
-        <div class="package-desc" data-i18n="pkg.addon.desc">Mach mehr aus deinem Paket — einfach dazubuchen</div>
-        <ul class="package-features">
-          <li>Eurolite Laserbar Pro — €25/Tag</li>
-          <li>Nebelmaschine — €15/Tag</li>
-          <li>Funkmikrofon — €15/Tag</li>
-          <li>Großes Event? Individuell anfragen</li>
-        </ul>
-        <div class="package-footer">
-          <div class="package-price">
-            ab €15
-            <span>pro Add-on / Tag</span>
+        <div class="package-desc" style="margin-bottom:20px;">Direkt dazubuchen — Licht, Effekte &amp; Mikrofon</div>
+        <div style="display:flex; flex-direction:column; gap:10px; flex:1;">
+
+          <!-- Laserbar row -->
+          <div style="display:flex; align-items:center; justify-content:space-between; gap:12px; background:#111; border:1px solid #222; border-radius:6px; padding:12px 14px;">
+            <div>
+              <div style="font-family:'Barlow Condensed',sans-serif; font-weight:700; font-size:15px; color:white; text-transform:uppercase; letter-spacing:0.03em;">🔴 Laserbar FX Pro</div>
+              <div style="font-size:11px; color:rgba(255,255,255,0.35); margin-top:2px;">RGB · Musik-Sync</div>
+            </div>
+            <div style="display:flex; align-items:center; gap:10px; flex-shrink:0;">
+              <span style="font-family:'Barlow Condensed',sans-serif; font-weight:900; font-size:16px; color:var(--green);">€39</span>
+              <button class="btn-book" style="font-size:11px; padding:7px 12px; white-space:nowrap;"
+                onclick="var b=document.querySelector('#bq-laserbar button,#bq-laserbar a');if(b)b.dispatchEvent(new MouseEvent('click',{bubbles:true,cancelable:true,view:window}));">+ Warenkorb</button>
+            </div>
           </div>
-          <span class="btn-book">Entdecken →</span>
+
+          <!-- Nebelmaschine row -->
+          <div style="display:flex; align-items:center; justify-content:space-between; gap:12px; background:#111; border:1px solid #222; border-radius:6px; padding:12px 14px;">
+            <div>
+              <div style="font-family:'Barlow Condensed',sans-serif; font-weight:700; font-size:15px; color:white; text-transform:uppercase; letter-spacing:0.03em;">🌫️ Nebelmaschine</div>
+              <div style="font-size:11px; color:rgba(255,255,255,0.35); margin-top:2px;">inkl. Flüssigkeit</div>
+            </div>
+            <div style="display:flex; align-items:center; gap:10px; flex-shrink:0;">
+              <span style="font-family:'Barlow Condensed',sans-serif; font-weight:900; font-size:16px; color:var(--green);">€19</span>
+              <button class="btn-book" style="font-size:11px; padding:7px 12px; white-space:nowrap;"
+                onclick="var b=document.querySelector('#bq-nebel button,#bq-nebel a');if(b)b.dispatchEvent(new MouseEvent('click',{bubbles:true,cancelable:true,view:window}));">+ Warenkorb</button>
+            </div>
+          </div>
+
+          <!-- Funkmikrofon row -->
+          <div style="display:flex; align-items:center; justify-content:space-between; gap:12px; background:#111; border:1px solid #222; border-radius:6px; padding:12px 14px;">
+            <div>
+              <div style="font-family:'Barlow Condensed',sans-serif; font-weight:700; font-size:15px; color:white; text-transform:uppercase; letter-spacing:0.03em;">🎤 Funkmikrofon 2er</div>
+              <div style="font-size:11px; color:rgba(255,255,255,0.35); margin-top:2px;">kabellos · Plug &amp; Play</div>
+            </div>
+            <div style="display:flex; align-items:center; gap:10px; flex-shrink:0;">
+              <span style="font-family:'Barlow Condensed',sans-serif; font-weight:900; font-size:16px; color:var(--green);">€15</span>
+              <button class="btn-book" style="font-size:11px; padding:7px 12px; white-space:nowrap;"
+                onclick="var b=document.querySelector('#bq-mikro button,#bq-mikro a');if(b)b.dispatchEvent(new MouseEvent('click',{bubbles:true,cancelable:true,view:window}));">+ Warenkorb</button>
+            </div>
+          </div>
+
         </div>
       </div>
-    </a>
+    </div>
 
   </div>
 </section>
@@ -381,10 +401,15 @@
 <!-- ══════════════════════════
      LICHT & EFFEKTE
      ══════════════════════════ -->
-<section id="licht-effekte" style="background:#0A0A0A; padding:80px 48px;">
+<section id="licht-effekte" style="position:relative; padding:80px 48px;">
+  <div style="position:absolute; inset:0; z-index:0;">
+    <img src="assets/images/licht-effekte-bg.jpg" alt="" style="width:100%; height:100%; object-fit:cover; object-position:center 40%; filter:brightness(0.25);">
+    <div style="position:absolute; inset:0; background:rgba(0,0,0,0.55);"></div>
+  </div>
+  <div style="position:relative; z-index:1;">
   <div class="section-header" style="margin-bottom:40px;">
     <div class="section-label" style="color:var(--green);">Einfach dazubuchen</div>
-    <h2 class="section-title" style="color:white;">Add-ons</h2>
+    <h2 class="section-title" style="color:white;">Licht &amp; Effekte</h2>
     <p class="section-sub" style="color:rgba(255,255,255,0.5);">Laser, Nebel &amp; Mikrofon — direkt zum Paket dazubuchen.</p>
   </div>
   <div class="addons-grid" style="display:grid; grid-template-columns:repeat(3,1fr); gap:20px; max-width:1100px; margin:0 auto;">
@@ -440,6 +465,7 @@
       </div>
     </div>
 
+  </div>
   </div>
 </section>
 
